@@ -1,6 +1,4 @@
 # If you come from bash you might have to change your $PATH.
-
- export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="~/.oh-my-zsh"
 # Add Reverse i search functionality
@@ -70,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl podman history adb alias-finder docker encode64 lol helm sudo vscode web-search oc )
+plugins=(git kubectl history adb alias-finder docker encode64 lol helm sudo vscode web-search oc )
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
