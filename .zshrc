@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-
- export JAVA_HOME=/usr/local/java/jdk-13.0.1
- export PATH=$HOME/bin:/usr/local/bin:$PATH:$JAVA_HOME
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tdale/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 # Add Reverse i search functionality
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -71,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl podman history adb alias-finder docker encode64 lol helm sudo vscode web-search oc )
+plugins=(git kubectl history adb alias-finder docker encode64 lol helm sudo vscode web-search oc )
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
