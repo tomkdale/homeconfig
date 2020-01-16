@@ -20,3 +20,8 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 ```
+#configure ansible to do all this
+#add the following useful plugins
+# z
+# how2
+
