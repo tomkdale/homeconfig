@@ -2,7 +2,7 @@
  export JAVA_HOME=/usr/local/java/jdk-13.0.1
  export PATH=$HOME/bin:/usr/local/bin:$PATH:$JAVA_HOME
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tdale/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 # Add Reverse i search functionality
 bindkey -v
 bindkey '^R' history-incremental-search-backward
