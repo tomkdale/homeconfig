@@ -39,4 +39,27 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-set number
+set number relativenumber
+set ic ai ts=2 
+syntax on
+if has("autocmd")
+	  filetype indent plugin on
+  endif
+
+"set leader
+let mapleader = ","
+let maplocalleader = '\\'
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+"abbreviations to fix typos
+iabbrev waht what
+iabbrev stache stash
+iabbrev comit commit
+iabbrev whaoami whoami
+iabbrev whaomi whoami
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader># i#########################################<esc>
+inoremap <leader># #########################################
+nnoremap <space> i<space>
+noremap <leader>, i<enter><esc>
+"create pipeline for quick notes
