@@ -29,7 +29,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -39,7 +39,24 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" Powerline vim script from
+" https://fedoramagazine.org/add-power-terminal-powerline/
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set t_Co=256
+"NERDtree"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+"vimwiki
+Plugin 'vimwiki/vimwiki'
+"personal fun things
 set number relativenumber
+
 set ic ai ts=2 
 syntax on
 if has("autocmd")
@@ -62,4 +79,3 @@ nnoremap <leader># i#########################################<esc>
 inoremap <leader># #########################################
 nnoremap <space> i<space>
 noremap <leader>, i<enter><esc>
-"create pipeline for quick notes
