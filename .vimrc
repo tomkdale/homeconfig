@@ -54,6 +54,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 "vimwiki
 Plugin 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path':'~/Notes/wiki', 'path_html':'~/Notes/export/html/'}]
+
 "personal fun things
 set number relativenumber
 
