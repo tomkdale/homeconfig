@@ -59,6 +59,7 @@ let g:vimwiki_list = [{'path':'~/Notes/wiki', 'path_html':'~/Notes/export/html/'
 "personal fun things
 set number relativenumber
 
+set mouse=a
 set ic ai ts=2 
 syntax on
 if has("autocmd")
