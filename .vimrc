@@ -64,7 +64,10 @@ syntax on
 if has("autocmd")
 	  filetype indent plugin on
   endif
-
+"split screen setting
+set splitbelow
+set splitright
+set modifiable
 "set leader
 let mapleader = ","
 let maplocalleader = '\\'
@@ -81,3 +84,4 @@ nnoremap <leader># i#########################################<esc>
 inoremap <leader># #########################################
 nnoremap <space> i<space>
 noremap <leader>, i<enter><esc>
+
