@@ -27,3 +27,10 @@ Not done from terminal:
 # tmux
 # take oh my zsh out of this dir. Should only have configs and scripts to automatically pull this data from github
 # notes and vimwiki
+zsh
+xclip
+create tmux tool to add to a todo stack
+z
+ctrl+shift movement
+htop
+curl
