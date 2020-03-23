@@ -1,0 +1,16 @@
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Primary><Shift>l'
+command="wmctrl -a 'Terminal'"
+name='Fterm'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Primary><Shift>k'
+command="wmctrl -a 'Firefox'"
+name='FFirefox'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Primary><Shift>j'
+command="wmctrl -a 'Slack'"
+name='FSlack'
+
+
