@@ -13,11 +13,11 @@
       - curl
       - tree
 
-- name: install system updates for redhat systems
-  yum: name=* state=latest update_cache=yes
-  when: ansible_os_family == 'RedHat'
-
-- name: install system updates for debian systems
-  apt: upgrade=dist update_cache=yes
-  when: ansible_os_family == 'Debian'
+  - name: install system updates for redhat systems
+    yum: name=* state=latest update_cache=yes
+    when: ansible_os_family == 'RedHat'
+  
+  - name: install system updates for debian systems
+    apt: upgrade=dist update_cache=yes
+    when: ansible_os_family == 'Debian'
 
