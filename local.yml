@@ -4,7 +4,14 @@
   tasks:
   - name: Install Packages
     action: >
-      {{ ansible_pkg_mgr }} name= [tmux, zsh, xclip, vim, curl, tree]
+      {{ ansible_pkg_mgr }} name={{item}} state=present update_cache=yes
+    with_items:
+      - tmux
+      - zsh
+      - xclip
+      - vim
+      - curl
+      - tree
 
   - name: install system updates for redhat systems
     yum: name=* state=latest update_cache=yes
