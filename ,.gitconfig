@@ -1,5 +1,0 @@
-[user]
-	email = tdale@ibm.com
-	name = tdaleibm
-[alias]
-	launch = !git add . && git commit -m. && git push
