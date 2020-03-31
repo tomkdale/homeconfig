@@ -1,15 +1,16 @@
 #Tom's zsh config
+ export TERM="xterm-256color" 
  export JAVA_HOME=/usr/local/java/jdk-13.0.1
  export PATH=$HOME/bin:/usr/local/bin:$PATH:$JAVA_HOME
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/tdale/.oh-my-zsh"
 # Add Reverse i search functionality
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 source ~/productivity/z/z.sh
 autoload -U compinit && compinit
@@ -52,7 +53,13 @@ plugins=(git kubectl podman history adb alias-finder docker encode64 lol helm su
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+########################################## User configuration
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
 #export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -75,3 +82,12 @@ alias open="xdg-open"
 alias xclip="xclip -se c"
 alias :wq="exit"
 alias lh="ls -hl"
+alias whaoami="whoami"
+alias whaomi="whoami"
+alias vi="vim"
+alias l="ls -lhta"
+alias rf="rm -rf"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/odo odo
+# don't put space started commands in history
+export HISTCONTROL=erasedups:ignorespace
