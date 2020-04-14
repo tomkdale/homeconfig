@@ -38,3 +38,6 @@ ctrl+shift movement
 htop
 curl
 bash-ide https://www.tecmint.com/use-vim-as-bash-ide-using-bash-support-in-linux/ 
+
+Add taskell configuration
+https://github.com/smallhadroncollider/taskell
