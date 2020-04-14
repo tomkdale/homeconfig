@@ -1,13 +1,16 @@
 # homedir
 
-Tom's dotfiles held here, do this on new machine install. IF configuring a server (no X windows) then do the following from server/ .
+Tom's dotfiles held here, do this on new machine install. IF configuring a server (no X windows) then do the following from `server/ `
 
 ```
-$ install git and login
-$ mkdir productivity/
-$ git clone https://github.com/tomkdale/homedir ./github/
-$ cp github/homedir/.[Xa-z]* .
-$ bin/,configurevim
+
+sudo <apt/dnf> install ansible
+sudo ansible-pull -U https://github.com:tomkdale/homedir.git
+
+# mkdir productivity/
+# git clone https://github.com/tomkdale/homedir ./github/
+# cp github/homedir/.[Xa-z]* .
+# bin/,configurevim
 ```
 Also need to clone 
  - git@github.com:agkozak/zsh-z.git

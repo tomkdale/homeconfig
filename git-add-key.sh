@@ -1,3 +1,9 @@
+ssh git@github.com 2>&1 >/dev/null | grep 'successfully' -q
+if [ $? ]; then
+				echo 'Github ssh already successful'
+			  exit 0
+fi
+
 read -p "Enter github email : " email
 echo "Using email $email"
 ssh-keygen -t rsa -b 4096 -C "$email"
