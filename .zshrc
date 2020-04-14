@@ -87,6 +87,7 @@ alias whaomi="whoami"
 alias vi="vim"
 alias l="ls -lhta"
 alias rf="rm -rf"
+alias bush="tree -L 2"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 # don't put space started commands in history
