@@ -78,6 +78,7 @@ iabbrev comit commit
 iabbrev whaoami whoami
 iabbrev whaomi whoami
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>w :set wrap!
 nnoremap <leader># i#########################################<esc>
 inoremap <leader># #########################################
 nnoremap <space> i<space>
