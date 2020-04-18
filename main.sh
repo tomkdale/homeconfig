@@ -4,6 +4,7 @@
 # Tom Dale
 #########################################
 
+sh ./install_pacs.sh
 #Get distro 
 if [ -f /etc/os-release ]; then
   . /etc/os-release

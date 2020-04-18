@@ -25,6 +25,7 @@ install_bootloadhid() {
 
 if grep ID /etc/os-release | grep -qE "fedora"; then
 	sudo dnf install \
+	  ansible
 		arm-none-eabi-binutils-cs \
 		arm-none-eabi-gcc-cs \
 		arm-none-eabi-newlib \
@@ -55,6 +56,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 	export DEBIAN_FRONTEND DEBCONF_NONINTERACTIVE_SEEN
 	sudo apt-get update
 	sudo apt-get -yq install \
+		ansible
 		build-essential \
 		avr-libc \
 		binutils-arm-none-eabi \
@@ -66,6 +68,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 		gcc \
 		gcc-arm-none-eabi \
 		gcc-avr \
+		net-utils \
 		git \
 		libnewlib-arm-none-eabi \
 		libusb-dev \
@@ -78,6 +81,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman --needed -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
 	sudo pacman -S --needed \
+		ansible
 		arm-none-eabi-binutils \
 		arm-none-eabi-gcc \
 		arm-none-eabi-newlib \
@@ -108,6 +112,7 @@ elif grep ID /etc/os-release | grep -q gentoo; then
 		echo "sys-devel/gcc multilib" | sudo tee --append /etc/portage/package.use/qmkfirmware >/dev/null
 		sudo emerge -auN sys-devel/gcc
 		sudo emerge -au --noreplace \
+			ansible
 			app-arch/unzip \
 			app-arch/zip \
 			app-mobilephone/dfu-util \
@@ -124,6 +129,7 @@ elif grep ID /etc/os-release | grep -q gentoo; then
 
 elif grep ID /etc/os-release | grep -q sabayon; then
 	sudo equo install \
+		ansible
 		app-arch/unzip \
 		app-arch/zip \
 		app-mobilephone/dfu-util \
@@ -145,6 +151,7 @@ elif grep ID /etc/os-release | grep -qE "opensuse|tumbleweed"; then
 		CROSS_ARM_GCC=cross-arm-none-gcc7
 	fi
 	sudo zypper install \
+		ansible
 		avr-libc \
 		clang \
 		$CROSS_AVR_GCC \
@@ -167,6 +174,7 @@ elif grep ID /etc/os-release | grep -q slackware; then
 	read -r answer
 	if echo "$answer" | grep -iq "^y" ;then
 		sudo sboinstall \
+			ansible
 			avr-binutils \
 			avr-gcc \
 			avr-libc \

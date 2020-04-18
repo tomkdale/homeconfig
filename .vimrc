@@ -53,6 +53,8 @@ map <C-n> :NERDTreeToggle<CR>
 Plugin 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path':'~/Notes/wiki', 'path_html':'~/Notes/export/html/'}]
 
+" Save with sudo
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 "personal fun things
 set number relativenumber
 
