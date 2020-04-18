@@ -1,0 +1,9 @@
+Host king
+	User pi
+	HostName 192.168.0.14
+Host fellowship
+	User pi
+	HostName 192.168.0.24
+Host tower
+	User pi
+	HostName 192.168.0.16
