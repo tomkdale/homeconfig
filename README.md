@@ -1,14 +1,18 @@
 # homedir
 
-Tom's dotfiles held here, do this on new machine install. IF configuring a server (no X windows) then do the following from `server/ `
+Tom's dotfiles held here, do this on new machine install. If configuring a server (no X windows) then do the following from `server/ `
 
 ```
+## Standard Setup
+1. Install git
 
-sudo <apt/dnf> install ansible
-sudo ansible-pull -U https://github.com:tomkdale/homedir.git
+2. ` mkdir ~/productivity/ && git clone https://github.com/tomkdale/homedir ~/productivity/
 
-# mkdir productivity/
-# git clone https://github.com/tomkdale/homedir ./github/
+3. ` sudo ~/productivity/homedir/main.sh `
+
+
+# mkdir productivity/ 
+# git clone https://github.com/tomkdale/homedir ~/productivity/
 # cp github/homedir/.[Xa-z]* .
 # bin/,configurevim
 ```
