@@ -1,7 +1,7 @@
 ssh git@github.com 2>&1 >/dev/null | grep 'successfully' -q
 if [ $? ]; then
-				echo 'Github ssh already successful'
-			  exit 0
+  echo 'Github ssh already successful'
+  exit 0
 fi
 
 read -p "Enter github email : " email
