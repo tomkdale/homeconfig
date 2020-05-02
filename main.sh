@@ -5,8 +5,8 @@
 #########################################
 
 # Link all dotfiles to homedir
-for file in $( ls -apd .?* |  grep -v / |  grep -v .sw | grep -v .gitconfig) ; do
-  ln -v "~/productivity/homedir/$file" "$HOME"
+for file in $( ls -apd .?* |  grep -v / |  grep -v .sw ) ; do
+  ln -sfv "~/productivity/homedir/$file" "$HOME/$file"
 done
 
 #Install a bunch of things, most importantly: ansible
@@ -26,6 +26,6 @@ fi
 
 
 #install zsh
-cd 
+cd $HOME 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
