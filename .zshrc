@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #Tom's zsh config
  export TERM="xterm-256color" 
  export JAVA_HOME=/usr/local/java/jdk-13.0.1
@@ -10,9 +17,9 @@ bindkey '^R' history-incremental-search-backward
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-source ~/productivity/z/z.sh
+source ~/productivity/homeconfig/z.sh
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -49,7 +56,7 @@ zstyle ':completion:*' menu select
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl podman history adb alias-finder docker encode64 lol helm sudo vscode web-search oc )
+plugins=(git history adb alias-finder docker encode64 lol helm sudo web-search oc )
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
@@ -58,7 +65,7 @@ if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+	. /usr/share/powerline/bash/powerline.sh
 fi
 #export MANPATH="/usr/local/man:$MANPATH"
 
@@ -92,3 +99,6 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 # don't put space started commands in history
 export HISTCONTROL=erasedups:ignorespace
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

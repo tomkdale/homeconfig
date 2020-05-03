@@ -30,6 +30,7 @@ echo 'Set up git credentials if not already done'
 #install oh-my-zsh
 cd $HOME 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd $HOMECONFIG
 
 
 
