@@ -33,7 +33,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 cd $HOMECONFIG
 
 
-
 #########################################
 # vim things
 #########################################
@@ -65,3 +64,12 @@ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 fi
 
 ########################################
+# z jump around
+########################################
+# Add z jump around tool, this stays here and is added to zshrc
+cd $HOME/productivity
+git clone https://github.com/rupa/z.git
+
+
+
+

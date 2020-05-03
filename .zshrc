@@ -19,7 +19,7 @@ bindkey '^R' history-incremental-search-backward
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-source ~/productivity/homeconfig/z.sh
+source ~/productivity/z/z.sh
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 # Uncomment the following line to use hyphen-insensitive completion.
