@@ -4,6 +4,7 @@
 # Tom Dale
 #########################################
 
+
 HOMECONFIG=$HOME/productivity/homeconfig
 cd $HOMECONFIG
 
