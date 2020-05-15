@@ -64,12 +64,6 @@ plugins=(git history adb alias-finder docker encode64 lol helm sudo web-search o
 source $ZSH/oh-my-zsh.sh
 
 ########################################## User configuration
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-	. /usr/share/powerline/bash/powerline.sh
-fi
 #export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
