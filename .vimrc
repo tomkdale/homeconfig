@@ -20,6 +20,10 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+" Vim-tmux navigator
+https://github.com/christoomey/vim-tmux-navigator
+Plug 'christoomey/vim-tmux-navigator'	
+
 " Github dashboard, look through github events in vim
 " https://github.com/junegunn/vim-github-dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
