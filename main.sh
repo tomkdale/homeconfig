@@ -37,7 +37,12 @@ cd $HOMECONFIG
 #########################################
 # vim things
 #########################################
-
+# copy extended vim files to ~.vim/
+cp $HOMCONFIG/.vim $HOME/.vim
+# install vimplug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +Pluginstall +qall
 
 #########################################
 # tmux things

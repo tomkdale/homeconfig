@@ -1,6 +1,6 @@
 # homedir
 
-Tom's dotfiles held here, do this on new machine install. If configuring a server (no X windows) then do the following from `server/ `
+Tom's dotfiles held here, run `./main.sh` to setup environment. If configuring a server (no X windows) then do the following from `server/server.sh `
 
 ```
 ## Standard Setup
