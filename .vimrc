@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 
 " Vim-tmux navigator
-https://github.com/christoomey/vim-tmux-navigator
+"https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'	
 
 " Github dashboard, look through github events in vim

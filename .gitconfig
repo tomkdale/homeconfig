@@ -2,4 +2,4 @@
 	email = tdale@ibm.com
 	name = tdaleibm
 [alias]
-	launch = !git add . && git commit -m. && git push
+	launch = !git add . && git commit -m "$1" && git push
