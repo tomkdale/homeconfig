@@ -1,42 +1,51 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'christoomey/vim-tmux-navigator'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-"filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
+""""""""""""""""""""""""""""""""""""""""
+" Tom's vimrc
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" Powerline vim script from
+""""""""""""""""""""""""""""""""""""""
+
+
+" VIMPLUG
+" If vimplug not installed then install it
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Aligns text is special ways for extended formating rules
+" https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+" Github dashboard, look through github events in vim
+" https://github.com/junegunn/vim-github-dashboard
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" autofilling snippets in vim
+" https://github.com/SirVer/ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+" Nerdtree and nerdtree git
+Plug 'preservim/nerdtree' | Plug 'scrooloose/nerdtree' 
+
+" Sensible vimrc things that 'should be in any vimrc'
+" https://github.com/tpope/vim-sensible
+Plug 'tpope/vim-sensible'
+
+" Initialize plugin system
+call plug#end()
+
+
 " https://fedoramagazine.org/add-power-terminal-powerline/
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
@@ -45,13 +54,6 @@ set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
-"NERDtree"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-"vimwiki
-Plugin 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path':'~/Notes/wiki', 'path_html':'~/Notes/export/html/'}]
 
 " Save with sudo
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
