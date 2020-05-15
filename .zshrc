@@ -1,3 +1,6 @@
+# #########################################
+# Tom's .zshrc
+# #########################################
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -61,12 +64,6 @@ plugins=(git history adb alias-finder docker encode64 lol helm sudo web-search o
 source $ZSH/oh-my-zsh.sh
 
 ########################################## User configuration
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-	. /usr/share/powerline/bash/powerline.sh
-fi
 #export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -102,3 +99,5 @@ export HISTCONTROL=erasedups:ignorespace
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
