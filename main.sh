@@ -5,7 +5,8 @@
 #########################################
 
 
-HOMECONFIG=$HOME/productivity/homeconfig
+PRODUCTIVITY=$HOME/productivity
+HOMECONFIG=$PRODUCTIVITY/homeconfig
 cd $HOMECONFIG
 
 #########################################
@@ -73,9 +74,19 @@ fi
 # z jump around
 ########################################
 # Add z jump around tool, this stays here and is added to zshrc
-cd $HOME/productivity
+cd $PRODUCTIVITY
 git clone https://github.com/rupa/z.git
 
 
+
+#########################################
+# Todo w dropbox
+#########################################
+# install dropbox (headless 64bit)
+cd $HOME && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+sudo cp $HOMECONFIG/dropbox@.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable dropbox@tdale
+sudo systemctl start dropbox@tdale
 
 
