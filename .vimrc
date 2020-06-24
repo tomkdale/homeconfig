@@ -66,7 +66,7 @@ set t_Co=256
 " Save with sudo
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 "personal fun things
-set number relativenumber
+set number
 
 set mouse=a
 set ic ai ts=2 

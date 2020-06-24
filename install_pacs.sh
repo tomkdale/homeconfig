@@ -26,6 +26,7 @@ install_bootloadhid() {
 if grep ID /etc/os-release | grep -qE "fedora"; then
 	sudo dnf install \
 	  ansible
+    golang \
 		arm-none-eabi-binutils-cs \
 		arm-none-eabi-gcc-cs \
 		arm-none-eabi-newlib \
@@ -58,6 +59,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 	sudo apt-get -yq install \
 		ansible
 		build-essential \
+    golang \
 		avr-libc \
 		binutils-arm-none-eabi \
 		binutils-avr \

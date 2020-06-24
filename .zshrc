@@ -81,6 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
  alias zshconfig="vim ~/.zshrc"
 set -o vi
+alias info="info --vi-keys"
 alias la="ls -alh"
 alias open="xdg-open"
 alias xclip="xclip -se c"
