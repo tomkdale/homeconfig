@@ -89,4 +89,16 @@ sudo systemctl daemon-reload
 sudo systemctl enable dropbox@tdale
 sudo systemctl start dropbox@tdale
 
+#########################################
+# Install paperwm
+#########################################
+cd $HOMECONFIG
+#Load all keybindings
+cat dconf-settings.ini | dxonf load /
+cd $PRODUCTIVITY
+git clone https://github.com/paperwm/PaperWM.git 
+cd PaperWM
+echo "n 
+y" | ./install.sh
+
 
