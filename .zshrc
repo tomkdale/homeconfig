@@ -85,7 +85,6 @@ alias info="info --vi-keys"
 alias la="ls -alh"
 alias open="xdg-open"
 alias xclip="xclip -se c"
-alias :wq="exit"
 alias lh="ls -hl"
 alias whaoami="whoami"
 alias whaomi="whoami"
@@ -93,6 +92,13 @@ alias vi="vim"
 alias l="ls -lhta"
 alias rf="rm -rf"
 alias bush="tree -L 2"
+alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
+alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
+cddir ()
+{
+    mkdir -p -- "$1" &&
+      cd -P -- "$1"
+}
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 # don't put space started commands in history
