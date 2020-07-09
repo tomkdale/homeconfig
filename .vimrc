@@ -20,6 +20,10 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+" Check syntax in Vim 
+" https://vimawesome.com/plugin/ale
+Plug 'w0rp/ale'
+
 " Vim-tmux navigator
 "https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'	
