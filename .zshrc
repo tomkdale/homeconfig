@@ -12,6 +12,14 @@ fi
  export TERM="xterm-256color" 
  export JAVA_HOME=/usr/local/java/jdk-13.0.1
  export PATH=$HOME/bin:/usr/local/bin:$PATH:$JAVA_HOME
+
+#Adding a space before a command will ignore it from history
+ export HISTCONTROL=ignorespace
+
+export GOPATH=$HOME/go
+GOROOT=/usr/lib/golang
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tdale/.oh-my-zsh"
 # Add Reverse i search functionality
@@ -94,6 +102,15 @@ alias rf="rm -rf"
 alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
+# Openshift quick help
+alias ogresources="oc describe nodes | grep Resource -A 5"
+alias ogpods="oc get pods"
+alias ognodes="oc get nodes"
+alias ogsservices="oc get services"
+alias ogroutes="oc get routes"
+alias ogjobs="oc get jobs"
+
+
 cddir ()
 {
     mkdir -p -- "$1" &&
