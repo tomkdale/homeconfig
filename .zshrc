@@ -103,12 +103,13 @@ alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
 # Openshift quick help
-alias ogresources="oc describe nodes | grep Resource -A 5"
-alias ogpods="oc get pods"
-alias ognodes="oc get nodes"
-alias ogsservices="oc get services"
-alias ogroutes="oc get routes"
-alias ogjobs="oc get jobs"
+alias ogres="oc describe nodes | grep Resource -A 5"
+alias ogpod="oc get pods"
+alias ognod="oc get nodes"
+alias ogser="oc get services"
+alias ogrou="oc get routes"
+alias ogjob="oc get jobs"
+alias ogdep="oc get deployments"
 
 
 cddir ()
@@ -125,3 +126,7 @@ export HISTCONTROL=erasedups:ignorespace
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#add kube-ps1
+source /home/tdale/productivity/kube-ps1/kube-ps1.sh
+PROMPT='$(kube_ps1)'$PROMPT

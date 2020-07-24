@@ -88,3 +88,5 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source all files in the ~/.vim directory 
 source ~/.vim/*.vim
 
+noremap <leader>n :set number!<cr>
+
