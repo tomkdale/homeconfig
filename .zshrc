@@ -78,12 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
+export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -125,8 +120,8 @@ export HISTCONTROL=erasedups:ignorespace
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 #add kube-ps1
 source /home/tdale/productivity/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT

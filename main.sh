@@ -80,10 +80,11 @@ git clone https://github.com/rupa/z.git
 
 
 #########################################
-# Todo w dropbox
+# todo.txt with dropbox
 #########################################
 # install dropbox (headless 64bit)
-cd $HOME && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+cd $HOME 
+wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 sudo cp $HOMECONFIG/dropbox@.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable dropbox@tdale
