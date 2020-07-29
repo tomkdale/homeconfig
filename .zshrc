@@ -105,6 +105,8 @@ alias ogser="oc get services"
 alias ogrou="oc get routes"
 alias ogjob="oc get jobs"
 alias ogdep="oc get deployments"
+alias ogcon="oc config view | grep current-context"	
+
 
 
 cddir ()
