@@ -90,12 +90,21 @@ sudo systemctl daemon-reload
 sudo systemctl enable dropbox@tdale
 sudo systemctl start dropbox@tdale
 
+cd $PRODUCTIVITY
+git clone git@github.com:todotxt/todo.txt-cli.git
+cd todo.txt-cli
+make
+#Config dif location is tmp becuase its never used. The alias in .zshrc specifies to use ~/.todoconfig as the config file.
+make install CONFIG_DIR=/tmp INSTALL_DIR=~/.local/bin BASH_COMPLETION=~/.oh-my-zsh/completions
+ 
+
+
 #########################################
 # Install paperwm
 #########################################
 cd $HOMECONFIG
 #Load all keybindings
-cat dconf-settings.ini | dxonf load /
+cat dconf-settings.ini | dconf load /
 cd $PRODUCTIVITY
 git clone https://github.com/paperwm/PaperWM.git 
 cd PaperWM

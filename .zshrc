@@ -106,7 +106,7 @@ alias ogrou="oc get routes"
 alias ogjob="oc get jobs"
 alias ogdep="oc get deployments"
 alias ogcon="oc config view | grep current-context"	
-
+alias todo="todo.sh -d ~/.todo"
 
 
 cddir ()
