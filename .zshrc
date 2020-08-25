@@ -106,7 +106,21 @@ alias ogrou="oc get routes"
 alias ogjob="oc get jobs"
 alias ogdep="oc get deployments"
 alias ogcon="oc config view | grep current-context"	
+alias ogpro="oc get project"
+alias ogsec="oc get secrets"
+alias ogcro="oc get cronjobs"
+alias ogsub="oc get subscriptions"
+alias ogver="oc version"
+
+
+#More Aliases
 alias todo="todo.sh -d ~/.todo"
+alias dodo="todo.sh -d ~/.todo"
+alias oc="oc "
+alias versino="version"
+#alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
+
+
 
 
 cddir ()

@@ -46,9 +46,24 @@ let g:UltiSnipsEditSplit="vertical"
 " Nerdtree and nerdtree git
 Plug 'preservim/nerdtree' | Plug 'scrooloose/nerdtree' 
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Sensible vimrc things that 'should be in any vimrc'
 " https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+
+    let wiki_1 = {}
+    let wiki_1.path = '~/Notes/'
+    let wiki_1.html_template = '~/Notes/template.tpl'
+    let g:vimwiki_list = [wiki_1]
+" needed for vimwiki
+set nocompatible
+filetype plugin on
+syntax on
 
 " Initialize plugin system
 call plug#end()
@@ -70,7 +85,6 @@ set number
 
 set mouse=a
 set ic ai ts=2 
-syntax on
 if has("autocmd")
 	  filetype indent plugin on
   endif
@@ -89,4 +103,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 source ~/.vim/*.vim
 
 noremap <leader>n :set number!<cr>
+
+
 
