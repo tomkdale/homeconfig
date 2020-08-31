@@ -1,5 +1,5 @@
-ssh git@github.com 2>&1 >/dev/null | grep 'successfully' -q
-if [ $? ]; then
+#!/bin/bash
+if ssh git@github.com 2>&1 >/dev/null ; then
   echo 'Github ssh already successful'
   exit 0
 fi
