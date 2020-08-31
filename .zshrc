@@ -19,6 +19,8 @@ fi
 export GOPATH=$HOME/go
 GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tdale/.oh-my-zsh"
