@@ -57,8 +57,8 @@ Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 
     let wiki_1 = {}
-    let wiki_1.path = '~/Notes/'
-    let wiki_1.html_template = '~/Notes/template.tpl'
+    let wiki_1.path = '~/Dropbox/Apps/Notes/'
+    let wiki_1.html_template = '~/Dropbox/Apps/Notes/template.tpl'
     let g:vimwiki_list = [wiki_1]
 " needed for vimwiki
 set nocompatible
