@@ -102,7 +102,6 @@ alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
 # Openshift quick help
-<<<<<<< Updated upstream
 alias ogres="oc describe nodes | grep Resource -A 5"
 alias ogpod="oc get pods"
 alias ognod="oc get nodes"
@@ -124,23 +123,6 @@ alias dodo="todo.sh -d ~/.todo"
 alias oc="oc "
 alias versino="version"
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
-
-
-
-=======
-alias ogresources="oc describe nodes | grep Resource -A 5"
-alias ogpods="oc get pods"
-alias ognodes="oc get nodes"
-alias ogsservices="oc get services"
-alias ogroutes="oc get routes"
-alias ogjobs="oc get jobs"
-alias ku="kubectl"
-alias python="python3"
-alias pip="pip3"
-alias todaytxt="vi $(date +'%y%m%d').txt"
-alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
->>>>>>> Stashed changes
-
 cddir ()
 {
     mkdir -p -- "$1" &&
@@ -154,13 +136,8 @@ export HISTCONTROL=erasedups:ignorespace
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-<<<<<<< Updated upstream
 #fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #add kube-ps1
 source /home/tdale/productivity/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
-=======
-[ -f ~/.fzf.,nsh ] && source ~/.fzf.zsh
-
->>>>>>> Stashed changes
