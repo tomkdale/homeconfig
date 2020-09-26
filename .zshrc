@@ -22,6 +22,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
+export PATH=$PATH:/home/tdale/.local/bin
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tdale/.oh-my-zsh"
 # Add Reverse i search functionality
@@ -69,7 +71,7 @@ zstyle ':completion:*' menu select
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history adb alias-finder docker encode64 lol helm sudo web-search oc )
+plugins=(git history docker sudo oc kubectl dnf pip )
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
@@ -100,6 +102,7 @@ alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
 # Openshift quick help
+<<<<<<< Updated upstream
 alias ogres="oc describe nodes | grep Resource -A 5"
 alias ogpod="oc get pods"
 alias ognod="oc get nodes"
@@ -124,6 +127,19 @@ alias versino="version"
 
 
 
+=======
+alias ogresources="oc describe nodes | grep Resource -A 5"
+alias ogpods="oc get pods"
+alias ognodes="oc get nodes"
+alias ogsservices="oc get services"
+alias ogroutes="oc get routes"
+alias ogjobs="oc get jobs"
+alias ku="kubectl"
+alias python="python3"
+alias pip="pip3"
+alias todaytxt="vi $(date +'%y%m%d').txt"
+alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+>>>>>>> Stashed changes
 
 cddir ()
 {
@@ -138,8 +154,13 @@ export HISTCONTROL=erasedups:ignorespace
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+<<<<<<< Updated upstream
 #fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #add kube-ps1
 source /home/tdale/productivity/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
+=======
+[ -f ~/.fzf.,nsh ] && source ~/.fzf.zsh
+
+>>>>>>> Stashed changes
