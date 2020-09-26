@@ -138,6 +138,3 @@ export HISTCONTROL=erasedups:ignorespace
 
 #fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#add kube-ps1
-source /home/tdale/productivity/kube-ps1/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT

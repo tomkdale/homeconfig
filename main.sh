@@ -48,6 +48,13 @@ vim +Pluginstall +qall
 #########################################
 # tmux things
 ##########################################
+mkdir $HOME/.tmux
+TMUXHOME=$HOME/.tmux
+## kube-tmux
+cd $TMUXHOME
+git clone https://github.com/jonmosco/kube-tmux.git 
+
+
 
 
 #########################################
@@ -97,8 +104,6 @@ make
 #Config dif location is tmp becuase its never used. The alias in .zshrc specifies to use ~/.todoconfig as the config file.
 make install CONFIG_DIR=/tmp INSTALL_DIR=~/.local/bin BASH_COMPLETION=~/.oh-my-zsh/completions
  
-
-
 #########################################
 # Install paperwm
 #########################################
