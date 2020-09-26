@@ -13,17 +13,14 @@ cd $HOMECONFIG
 #Install a bunch of things
 #########################################
 echo 'Install packages via bash'
-sh ./install_pacs.sh
-
-echo 'Start ansible automation section'
-ansible-playbook local.yml
+sh ./scripts/install_pacs.sh
 
 #########################################
 # Git things
 #########################################
 
 echo 'Set up git credentials if not already done'
-./git-add-key.sh
+./scripts/git-add-key.sh
 
 
 #########################################

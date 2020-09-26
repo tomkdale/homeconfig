@@ -82,7 +82,7 @@ set t_Co=256
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 "personal fun things
 set number
-
+set smartcase
 set mouse=a
 set ic ai ts=2 
 if has("autocmd")
@@ -96,13 +96,25 @@ set modifiable
 let mapleader = ","
 let maplocalleader = '\\'
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <K> <C-Y>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
-
-" Source all files in the ~/.vim directory 
-source ~/.vim/*.vim
-
 noremap <leader>n :set number!<cr>
 
-
+"abbreviations to fix typos
+iabbrev waht what
+iabbrev stache stash
+iabbrev comit commit
+iabbrev whaoami whoami
+iabbrev whaomi whoami
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>W :set wrap!
+nnoremap <leader># i#########################################<esc>
+inoremap <leader># #########################################
+nnoremap <leader>#m i################################<esc>o# Monday <esc>o#######################################
+nnoremap <leader>#t i################################<esc>o# Tuesday <esc>o#######################################
+nnoremap <leader>#w i################################<esc>o# Wednesday <esc>o######################################
+nnoremap <leader>#th i################################<esc>o# Thursday <esc>o#######################################
+nnoremap <leader>#f i################################<esc>o# Friday <esc>o#######################################
+nnoremap <space> i<space>
+noremap <leader>, i<enter><esc>
 

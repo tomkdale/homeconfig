@@ -1,8 +1,13 @@
 #!/bin/bash
-if ssh git@github.com 2>&1 >/dev/null ; then
+
+ssh git@github.com 
+if [ $? -eq 1 ]; then
   echo 'Github ssh already successful'
   exit 0
+else
+				echo 'Github ssh failed.'
 fi
+
 
 read -p "Enter github email : " email
 echo "Using email $email"
