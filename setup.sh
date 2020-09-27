@@ -37,8 +37,9 @@ done
 #########################################
 
 echo 'Set up git credentials if not already done'
-./scripts/git-add-key.sh
-
+if ./scripts/git-add-key.sh ; then
+				git remote set-url origin git@github.com:tomkdale/homeconfig.git
+fi
 
 #########################################
 # zsh things	
