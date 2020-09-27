@@ -25,7 +25,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tdale/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 # Add Reverse i search functionality
 bindkey -v
 bindkey '^R' history-incremental-search-backward
