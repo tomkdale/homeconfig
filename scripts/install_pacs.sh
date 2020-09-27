@@ -36,6 +36,8 @@ if grep ID /etc/os-release | grep -qE "fedora"; then
 		curl \
 		tree \
 		shellcheck \
+		jq \
+		w3m \
 		zip
 
 elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
@@ -71,6 +73,8 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 		shellcheck \
 		curl \
 		tree \
+		jq \
+		w3m \
 		zip
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
@@ -101,6 +105,8 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		curl \
 		tree \
 		shellcheck \
+		jq \
+		w3m \
 		zip
 
 else
