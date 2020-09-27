@@ -22,7 +22,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
-export PATH=$PATH:/home/tdale/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tdale/.oh-my-zsh"
