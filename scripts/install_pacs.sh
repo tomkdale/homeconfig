@@ -4,9 +4,9 @@
 
 # Note: This file uses tabs to indent. Please don't mix tabs and spaces.
 
-if grep ID /etc/os-release | grep -qE "fedora"; then
+if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	sudo dnf install \
-	  ansible
+	  ansible \
     golang \
 		arm-none-eabi-binutils-cs \
 		arm-none-eabi-gcc-cs \
@@ -39,13 +39,13 @@ if grep ID /etc/os-release | grep -qE "fedora"; then
 		w3m \
 		zip
 
-elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
+elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	DEBIAN_FRONTEND=noninteractive
 	DEBCONF_NONINTERACTIVE_SEEN=true
 	export DEBIAN_FRONTEND DEBCONF_NONINTERACTIVE_SEEN
 	sudo apt-get update
 	sudo apt-get -yq install \
-		ansible
+		ansible \
 		build-essential \
     golang \
 		avr-libc \
@@ -78,7 +78,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman --needed -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
 	sudo pacman -S --needed \
-		ansible
+		ansible \
 		arm-none-eabi-binutils \
 		arm-none-eabi-gcc \
 		arm-none-eabi-newlib \
