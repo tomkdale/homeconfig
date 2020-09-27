@@ -124,3 +124,9 @@ echo "n
 y" | ./install.sh
 
 
+#########################################
+# autostart
+#########################################
+# copy over the basic applications to autostart
+cd $HOMECONFIG || exit
+cp autostart/* $HOME/.config/autostart/
