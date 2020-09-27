@@ -42,13 +42,17 @@ if ./scripts/git-add-key.sh ; then
 fi
 
 #########################################
+# Powerline things
+#########################################
+pip install powerline-status
+
+#########################################
 # zsh things	
 #########################################
 #install oh-my-zsh
 cd $HOME  || exit
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cd $HOMECONFIG || exit
-
 
 #########################################
 # vim things

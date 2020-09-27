@@ -22,6 +22,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		ShellCheck \
 		jq \
 		w3m \
+		tmux \
 		zip \
 	|| exit 1	
 
@@ -48,6 +49,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 		tree \
 		jq \
 		w3m \
+		tmux \
 		zip \
 	|| exit 1	
 	
@@ -71,6 +73,7 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		shellcheck \
 		jq \
 		w3m \
+		tmux \
 		zip \
 	|| exit 1	
 else
