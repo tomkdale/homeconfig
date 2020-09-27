@@ -44,7 +44,7 @@ fi
 #########################################
 # Powerline things
 #########################################
-pip install powerline-status
+sudo pip3 install powerline-status
 
 #########################################
 # zsh things	
@@ -130,8 +130,8 @@ y" | ./install.sh
 
 
 #########################################
-# autostart
+# autostart (do I really want this?)
 #########################################
 # copy over the basic applications to autostart
-cd $HOMECONFIG || exit
-cp autostart/* $HOME/.config/autostart/
+#cd $HOMECONFIG || exit
+#cp autostart/* $HOME/.config/autostart/
