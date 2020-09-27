@@ -1,47 +1,10 @@
 # homedir
+Tom's linux 1 stop environment setup, run `./setup.sh` to setup desktop environment. If configuring a headless machine  then do the following from `headless/setup.sh ` Works for Redhat, Debian, and arch derivatives that run gnome.
 
-Tom's dotfiles held here, run `./main.sh` to setup environment. If configuring a server (no X windows) then do the following from `server/server.sh `
-
-```
 ## Standard Setup
-1. Install git
+1. `mkdir ~/productivity && git clone https://github.com/tomkdale/homeconfig.git ~/productivity/homeconfig`
+2. ` sudo ~/productivity/homedir/setup.sh `
+Done!
 
-2. ` mkdir ~/productivity/ && git clone https://github.com/tomkdale/homedir ~/productivity/
+If you're not me then you probably don't actually want to do this. If you do, please don't do it on a machine that matters becuase I change a lot of settings just how I like them. 
 
-3. ` sudo ~/productivity/homedir/main.sh `
-
-
-# mkdir productivity/ 
-# git clone https://github.com/tomkdale/homedir ~/productivity/
-# cp github/homedir/.[Xa-z]* .
-# bin/,configurevim
-```
-Also need to clone 
- - git@github.com:agkozak/zsh-z.git
- - git@github.com:ohmyzsh/ohmyzsh.git
-
-Not done from terminal:
- - Switch esc and caps lock in gnome tweaks
- - Login to firefox or enable: vimium, ghostery, 1password, web search navigator.
-
-
-//TODO
-#configure ansible to do all this
-#add the following useful plugins
-# z
-# how2
-# tree
-# tmux
-# take oh my zsh out of this dir. Should only have configs and scripts to automatically pull this data from github
-# notes and vimwiki
-zsh
-xclip
-create tmux tool to add to a todo stack
-z
-ctrl+shift movement
-htop
-curl
-bash-ide https://www.tecmint.com/use-vim-as-bash-ide-using-bash-support-in-linux/ 
-
-Add taskell configuration
-https://github.com/smallhadroncollider/taskell
