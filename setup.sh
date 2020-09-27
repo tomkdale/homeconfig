@@ -21,7 +21,7 @@ fi
 #Install a bunch of things
 #########################################
 echo 'Install packages via bash'
-sh ./scripts/install_pacs.sh
+bash ./scripts/install_pacs.sh || exit 77
 
 #########################################
 # Link all dotfiles to homedir

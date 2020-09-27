@@ -7,7 +7,7 @@
 if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	sudo dnf install \
 	  ansible \
-    golang \
+	    golang \
 		git \
 		gcc \
 		make \
@@ -22,7 +22,8 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		ShellCheck \
 		jq \
 		w3m \
-		zip
+		zip \
+	|| exit 1	
 
 elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	DEBIAN_FRONTEND=noninteractive
@@ -32,7 +33,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	sudo apt-get -yq install \
 		ansible \
 		build-essential \
-    golang \
+    		golang \
 		gcc \
 		net-utils \
 		git \
@@ -47,7 +48,9 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 		tree \
 		jq \
 		w3m \
-		zip
+		zip \
+	|| exit 1	
+	
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman --needed -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
@@ -68,8 +71,8 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		shellcheck \
 		jq \
 		w3m \
-		zip
-
+		zip \
+	|| exit 1	
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi
