@@ -30,7 +30,6 @@ if grep ID /etc/os-release | grep -qE "fedora"; then
 		python3 \
 		unzip \
 		wget \
-		ytop \
 		xclip \
 		vim \
 		curl \
@@ -67,7 +66,6 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu'; then
 		python3-pip \
 		unzip \
 		wget \
-		ytop \
 		xclip \
 		vim \
 		shellcheck \
@@ -99,7 +97,6 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		python-pip \
 		unzip \
 		wget \
-		ytop \
 		xclip \
 		vim \
 		curl \
