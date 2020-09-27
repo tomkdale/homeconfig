@@ -1,4 +1,4 @@
-# homedir
+# homeconfig
 Tom's linux 1 stop environment setup, run `./setup.sh` to setup desktop environment. If configuring a headless machine  then do the following from `headless/setup.sh ` Works for Redhat, Debian, and arch derivatives that run gnome.
 
 ## Standard Setup
