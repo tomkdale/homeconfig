@@ -34,7 +34,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		vim \
 		curl \
 		tree \
-		shellcheck \
+		ShellCheck \
 		jq \
 		w3m \
 		zip
