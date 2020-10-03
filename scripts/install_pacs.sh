@@ -58,25 +58,26 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman --needed -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
-	sudo pacman -S --needed \
-		ansible \
-		base-devel \
-		clang \
-		gcc \
-		git \
-		python \
-		python-pip \
-		unzip \
-		wget \
-		xclip \
-		vim \
-		curl \
-		tree \
-		shellcheck \
-		jq \
-		w3m \
-		tmux \
-		zip \
+	sudo pacman -S ansible --noconfirm
+	sudo pacman -S base-devel --noconfirm
+	sudo pacman -S clang --noconfirm
+	sudo pacman -S gcc --noconfirm
+	sudo pacman -S git --noconfirm
+	sudo pacman -S python --noconfirm
+	sudo pacman -S python-pip --noconfirm
+	sudo pacman -S unzip --noconfirm
+	sudo pacman -S wget --noconfirm
+	sudo pacman -S xclip --noconfirm
+	sudo pacman -S vim --noconfirm
+	sudo pacman -S curl --noconfirm
+	sudo pacman -S tree --noconfirm
+	sudo pacman -S shellcheck --noconfirm
+	sudo pacman -S jq --noconfirm
+	sudo pacman -S w3m --noconfirm
+	sudo pacman -S tmux --noconfirm
+	sudo pacman -S zip  --noconfirm
+	sudo pacman -S github-cli --noconfirm
+	sudo packman -S nmap --noconfirm
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi

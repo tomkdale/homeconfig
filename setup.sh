@@ -27,7 +27,10 @@ bash ./scripts/install_pacs.sh || exit 77
 # Link all dotfiles to homedir
 #########################################
 echo 'Making soft links to these dotfiles from $HOME'
+mkdir $HOME/.dotfilebackups
 for file in $( ls -apd .?* |  grep -v / |  grep -v .sw ) ; do
+  # If there was a .dotfile present move it to .dotfilebackups
+  mv "$HOME/$file" "$HOME/.dotfilebackups" 2> /dev/null
   ln -sfv "$HOMECONFIG/$file" "$HOME/$file"
 done
 
