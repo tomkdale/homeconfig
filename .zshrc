@@ -102,6 +102,7 @@ alias sc="shellcheck"
 alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
+alias beep="beep1"
 # Openshift quick help
 alias ogres="oc describe nodes | grep Resource -A 5"
 alias ogpod="oc get pods"
