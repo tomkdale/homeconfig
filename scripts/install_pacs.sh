@@ -1,4 +1,5 @@
 #!/bin/sh
+set -ex
 #Forked from https://github.com/qmk/qmk_firmware/blob/master/util/linux_install.sh
 # Only modified for the distros that I use. To add a distro see above repo and edit
 
@@ -24,7 +25,9 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		w3m \
 		tmux \
 		zip \
-	|| exit 1	
+
+	sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+  sudo dnf install gh
 
 elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	DEBIAN_FRONTEND=noninteractive
@@ -51,7 +54,6 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 		w3m \
 		tmux \
 		zip \
-	|| exit 1	
 	
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
@@ -75,7 +77,6 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		w3m \
 		tmux \
 		zip \
-	|| exit 1	
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi
