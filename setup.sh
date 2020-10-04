@@ -61,7 +61,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # vim things
 #########################################
 # install vimplug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +Pluginstall +qall
 vim +PlugUpdate +qall
@@ -95,46 +95,9 @@ fi
 cd $PRODUCTIVITY || exit
 git clone https://github.com/rupa/z.git
 
-
-#########################################
-# todo.txt with dropbox
-#########################################
-# install dropbox (headless 64bit)
-cd $HOME  || exit
-wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-sudo cp $HOMECONFIG/dropbox@.service /etc/systemd/system
-sudo systemctl daemon-reload
-sudo systemctl enable dropbox@tdale
-sudo systemctl start dropbox@tdale
-
-cd $PRODUCTIVITY || exit
-git clone git@github.com:todotxt/todo.txt-cli.git
-cd todo.txt-cli || exit
-make
-#Config dif location is tmp becuase its never used. The alias in .zshrc specifies to use ~/.todoconfig as the config file.
-make install CONFIG_DIR=/tmp INSTALL_DIR=~/.local/bin BASH_COMPLETION=~/.oh-my-zsh/completions
-
 #########################################
 # Install Baker
 #########################################
+curl -fLo $HOME/.local/bin/baker https://raw.github.com/tomkdale/Baker/master/baker 
+chmod +x $HOME/.local/bin/baker
 
- 
-#########################################
-# Install paperwm
-#########################################
-cd $HOMECONFIG || exit
-#Load all keybindings
-cat dconf-settings.ini | dconf load /
-cd $PRODUCTIVITY || exit
-git clone https://github.com/paperwm/PaperWM.git 
-cd PaperWM || exit
-echo "n 
-y" | ./install.sh
-
-
-#########################################
-# autostart (do I really want this?)
-#########################################
-# copy over the basic applications to autostart
-#cd $HOMECONFIG || exit
-#cp autostart/* $HOME/.config/autostart/
