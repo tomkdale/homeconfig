@@ -10,12 +10,14 @@ cd $HOME  || exit
 
 #install and start drobox service
 wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-
-./dropbox-dist/dropboxd
+#Signing up for dropbox is interactive on the web and will bork terminal
+nohup ./.dropbox-dist/dropboxd &
+read -p "Once you've authenticated dropbox via the web. Press enter to continue"
 sudo cp $HOMECONFIG/dropbox@.service /etc/systemd/system
 sudo systemctl daemon-reload
-sudo systemctl enable dropbox@tdale
-sudo systemctl start dropbox@tdale
+sudo systemctl enable dropbox@"$USER"
+sudo systemctl start dropbox@"$USER"
+
 
 #install todo.txt-cli which is tracked as plaintext by dropbox
 cd $PRODUCTIVITY || exit
