@@ -25,6 +25,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		w3m \
 		tmux \
 		zip \
+    moreutils
 
 	sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
   sudo dnf install gh
@@ -54,6 +55,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 		w3m \
 		tmux \
 		zip \
+    moreutils
 	
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
@@ -77,6 +79,7 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 		w3m \
 		tmux \
 		zip \
+    moreutils
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi

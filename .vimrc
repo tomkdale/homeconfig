@@ -2,8 +2,6 @@
 " Tom's vimrc
 "
 """"""""""""""""""""""""""""""""""""""
-
-
 " VIMPLUG
 " If vimplug not installed then install it
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -32,15 +30,15 @@ Plug 'christoomey/vim-tmux-navigator'
 " https://github.com/junegunn/vim-github-dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-" autofilling snippets in vim
-" https://github.com/SirVer/ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" autofilling snippets in vim
+"" https://github.com/SirVer/ultisnips
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 
 " Nerdtree and nerdtree git
@@ -52,6 +50,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Sensible vimrc things that 'should be in any vimrc'
 " https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+
+" Vim-powerline
+Plug 'powerline/powerline'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'
@@ -69,25 +70,24 @@ syntax on
 call plug#end()
 
 
-" https://fedoramagazine.org/add-power-terminal-powerline/
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set t_Co=256
-
 " Save with sudo
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-"personal fun things
+
 set number
 set smartcase
 set mouse=a
+
+"tabs
+filetype plugin indent on
+" On pressing tab, insert 2 spaces
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 set ic ai ts=2 
-if has("autocmd")
-	  filetype indent plugin on
-  endif
+
 "split screen setting
 set splitbelow
 set splitright
@@ -101,6 +101,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>n :set number!<cr>
 
 "abbreviations to fix typos
+"seperate abbreviation file to vim bash and zsh
 iabbrev waht what
 iabbrev stache stash
 iabbrev comit commit
