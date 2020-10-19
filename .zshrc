@@ -145,6 +145,14 @@ cddir ()
     mkdir -p -- "$1" &&
       cd -P -- "$1"
 }
+
+vd () 
+{
+  cd "$1"
+  ls 
+}
+
+
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 # don't put space started commands in history
