@@ -116,7 +116,11 @@ alias ogpro="oc get project"
 alias ogsec="oc get secrets"
 alias ogcro="oc get cronjobs"
 alias ogsub="oc get subscriptions"
+alias ogall="oc get all"
 alias ogver="oc version"
+alias ogurl="oc get -n openshift-console route console"
+alias ogco="oc get co"
+alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 
 
 #More Aliases
@@ -124,7 +128,18 @@ alias todo="todo.sh -d ~/.todo"
 alias dodo="todo.sh -d ~/.todo"
 alias oc="oc "
 alias versino="version"
+
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
+
+ogswitch () 
+{
+  export KUBECONFIG=~/.kube/config"$1"
+}
+
+oglogin ()
+{
+  oc login --server="$1":6443
+}
 cddir ()
 {
     mkdir -p -- "$1" &&
