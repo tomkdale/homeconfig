@@ -26,4 +26,8 @@ cd todo.txt-cli || exit
 make
 #Config dif location is tmp becuase its never used. The alias in .zshrc specifies to use ~/.todoconfig as the config file.
 make install CONFIG_DIR=/tmp INSTALL_DIR=~/.local/bin BASH_COMPLETION=~/.oh-my-zsh/completions
- 
+
+# Add todotxt extension settings
+cat todotxt-dconf.ini | dconf load /org/gnome/shell/extensions/TodoTxt/
+
+

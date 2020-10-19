@@ -2,3 +2,6 @@
 	launch = !git add . && git commit -m. && git push
 	source = config --get remote.origin.url
 
+[user]
+	email = tom.k.dale@gmail.com
+	name = Tom
