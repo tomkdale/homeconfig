@@ -13,5 +13,8 @@ echo "n
 y" | ./install.sh
 
 
+#########################################
+# Apply gnome setting that I like
+#########################################
 
-#// TODO: Need to change this to only add needed things in dconf. Do you really want to delete all existing dconf settings
+dconf write 

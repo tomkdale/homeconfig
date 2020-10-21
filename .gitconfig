@@ -3,5 +3,5 @@
 	source = config --get remote.origin.url
 
 [user]
-	email = tdale@ibm.com
-	name = Tom Dale
+	email = tom.k.dale@gmail.com
+	name = Tom

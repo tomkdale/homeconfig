@@ -38,7 +38,7 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	sudo apt-get -yq install \
 		ansible \
 		build-essential \
-    		golang \
+   	golang \
 		gcc \
 		net-utils \
 		git \
@@ -79,8 +79,9 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman -S tmux --noconfirm
 	sudo pacman -S zip  --noconfirm
 	sudo pacman -S github-cli --noconfirm
-	sudo packman -S nmap --noconfirm
-	sudo packman -S moreutils--noconfirm
+	sudo pacman -S nmap --noconfirm
+	sudo pacman -S go --noconfirm
+	sudo pacman -S moreutils--noconfirm
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi

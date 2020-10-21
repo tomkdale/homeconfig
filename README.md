@@ -1,10 +1,12 @@
 # 🏠 homeconfig
-Tom's linux 1 stop environment setup, run `./setup.sh` to setup desktop environment. If configuring a headless machine  then do the following from `headless/setup.sh ` Works for Redhat, Debian, and arch derivatives that run gnome.
+Tom's linux 1 stop environment setup, run `./setup.sh` to setup desktop environment (zsh, tmux, packages, esc<->caps, and tons of configs) . If configuring a headless machine  then the run `headless/setup.sh ` Works for Redhat, Debian, and arch derivatives that run gnome.
 
 ## Standard Setup
 1. `mkdir ~/productivity && git clone https://github.com/tomkdale/homeconfig.git ~/productivity/homeconfig`
 2. ` ~/productivity/homedir/setup.sh ` not this will ask for your sudo password for somethings. Be careful
 Done!
 
-If you're not me then you probably don't actually want to do this. If you do, please don't do it on a machine that matters becuase I change a lot of settings just how I like them. 
 
+## Further Setup
+Further setup scripts are only sometimes needed.
+dropbox-setup.sh gnome-setup.sh
