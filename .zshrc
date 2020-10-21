@@ -75,11 +75,11 @@ plugins=(git history docker sudo oc kubectl dnf pip )
 #                                                                                              Please keep this one last ^^^^^^^
 source $ZSH/oh-my-zsh.sh
 
-########################################## User configuration
-#export MANPATH="/usr/local/man:$MANPATH"
+##########################################
+#My config
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+#make 777 file color less ugly with ls
+LS_COLORS="$LS_COLORS:ow=103;30;01"
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
