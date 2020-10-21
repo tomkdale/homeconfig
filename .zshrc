@@ -95,6 +95,8 @@ alias xclip="xclip -se c"
 alias lh="ls -hl"
 alias whaoami="whoami"
 alias whaomi="whoami"
+alias whoami="whoami"
+alias whomai="whoami"
 alias vi="vim"
 alias l="ls -lhta"
 alias rf="rm -rf"
@@ -121,6 +123,7 @@ alias ogver="oc version"
 alias ogurl="oc get -n openshift-console route console"
 alias ogco="oc get co"
 alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
+alias ogpa="oc get packagemanifests"
 
 
 #More Aliases
@@ -133,7 +136,8 @@ alias versino="version"
 
 ogswitch () 
 {
-  export KUBECONFIG=~/.kube/config"$1"
+  export KUBECONFIG=~/.kube/"$1"
+  oc status
 }
 
 oglogin ()
