@@ -6,6 +6,11 @@ set -ex
 # Note: This file uses tabs to indent. Please don't mix tabs and spaces.
 
 if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
+  if grep ID /etc/os-release |grep -qE "fedora"; then
+    
+  elif
+    yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  fi
 	sudo dnf install \
 	  ansible \
 	    golang \
@@ -26,7 +31,8 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 		tmux \
 		zip \
     moreutils
-
+    neovim
+    python3-neovim
 	sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
   sudo dnf install gh
 
@@ -55,7 +61,9 @@ elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 		w3m \
 		tmux \
 		zip \
-    moreutils
+    moreutils \
+    neovim
+
 	
 
 elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
@@ -82,6 +90,7 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman -S nmap --noconfirm
 	sudo pacman -S go --noconfirm
 	sudo pacman -S moreutils--noconfirm
+  sudo pacman -S neovim
 else
 	echo "Sorry, looks like you're cool and use a rare distro. I just use Arch, Redhat, and Debian variants. Want to extend, make a PR!"
 fi
