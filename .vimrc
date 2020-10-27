@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " Tom's vimrc
 "
 """"""""""""""""""""""""""""""""""""""
@@ -40,9 +40,8 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
-" Indent Guides 
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
+" Indent Guide
+Plug 'thaerkh/vim-indentguides'
 
 
 " Nerdtree and nerdtree git
@@ -50,6 +49,8 @@ Plug 'preservim/nerdtree' | Plug 'scrooloose/nerdtree'
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
+
 
 " Sensible vimrc things that 'should be in any vimrc'
 " https://github.com/tpope/vim-sensible
@@ -100,9 +101,9 @@ set modifiable
 "set leader
 let mapleader = ","
 let maplocalleader = '\\'
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source ~/.vimrc<cr>
 nnoremap <K> <C-Y>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 noremap <leader>n :set number!<cr>
 
 "abbreviations to fix typos
