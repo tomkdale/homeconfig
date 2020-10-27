@@ -143,15 +143,27 @@ alias ogurl="oc get -n openshift-console route console"
 alias ogco="oc get co"
 alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
-
+alias ogallroutes="oc get routes --all-namespaces | awk '{print $3}'"
 
 #More Aliases
 alias todo="todo.sh -d ~/.todo"
 alias dodo="todo.sh -d ~/.todo"
 alias oc="oc "
 alias versino="version"
+alias ezshrc="vi ~/.zshrc"
+alias szshrc="source ~/.zshrc"
 
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
+
+homeconfigpush()
+{
+  pushd
+  cd ~/productivity/homeconfig
+  git add .
+  git commit -m "1line push"
+  git push
+  popd
+}
 
 ogset()
 {
