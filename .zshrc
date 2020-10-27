@@ -86,7 +86,27 @@ export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
- alias zshconfig="vim ~/.zshrc"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/odo odo
+# don't put space started commands in history
+export HISTCONTROL=erasedups:ignorespace
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#########################################
+#Aliases
+
+alias vi="vim"
+if command -v nvim > /dev/null ; then
+  alias vi="nvim"
+  alias vim="nvim"
+fi
+alias zshconfig="vim ~/.zshrc"
 set -o vi
 alias info="info --vi-keys"
 alias la="ls -alh"
@@ -97,7 +117,6 @@ alias whaoami="whoami"
 alias whaomi="whoami"
 alias whoami="whoami"
 alias whomai="whoami"
-alias vi="vim"
 alias l="ls -lhta"
 alias rf="rm -rf"
 alias sc="shellcheck"
@@ -134,16 +153,18 @@ alias versino="version"
 
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
 
-ogswitch () 
+ogset()
 {
+  if [ ! -f ~/.kube/"$1" ]; then
+    touch ~/.kube/"$1"
+  fi
   export KUBECONFIG=~/.kube/"$1"
-  oc status
+}
+oglogin() 
+{
+  oc login --server=9.12.23."$1":6443
 }
 
-oglogin ()
-{
-  oc login --server="$1":6443
-}
 cddir ()
 {
     mkdir -p -- "$1" &&
@@ -157,13 +178,3 @@ vd ()
 }
 
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/odo odo
-# don't put space started commands in history
-export HISTCONTROL=erasedups:ignorespace
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-#fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

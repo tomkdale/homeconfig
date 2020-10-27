@@ -40,6 +40,10 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
+" Indent Guides 
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+
 
 " Nerdtree and nerdtree git
 Plug 'preservim/nerdtree' | Plug 'scrooloose/nerdtree' 
@@ -68,7 +72,8 @@ syntax on
 
 " Initialize plugin system
 call plug#end()
-
+"End plugin code
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Save with sudo
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
