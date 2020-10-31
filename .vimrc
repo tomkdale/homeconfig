@@ -77,7 +77,8 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Save with sudo
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! W w !sudo tee % > /dev/null
+
 
 set number
 set smartcase
@@ -122,6 +123,12 @@ nnoremap <leader>#t i################################<esc>o# Tuesday <esc>o#####
 nnoremap <leader>#w i################################<esc>o# Wednesday <esc>o######################################
 nnoremap <leader>#th i################################<esc>o# Thursday <esc>o#######################################
 nnoremap <leader>#f i################################<esc>o# Friday <esc>o#######################################
+inoremap <leader>#m ################################<esc>o# Monday <esc>o#######################################
+inoremap <leader>#t ################################<esc>o# Tuesday <esc>o#######################################
+inoremap <leader>#w ################################<esc>o# Wednesday <esc>o######################################
+inoremap <leader>#th ################################<esc>o# Thursday <esc>o#######################################
+inoremap <leader>#f ################################<esc>o# Friday <esc>o#######################################
+
 nnoremap <space> i<space>
 noremap <leader>, i<enter><esc>
 
