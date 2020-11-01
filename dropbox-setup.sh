@@ -9,9 +9,9 @@ HOMECONFIG=$PRODUCTIVITY/homeconfig
 cd $HOME  || exit
 
 #install and start drobox service
-wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+#wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 #Signing up for dropbox is interactive on the web and will bork terminal
-nohup ./.dropbox-dist/dropboxd &
+#nohup ./.dropbox-dist/dropboxd &
 read -p "Once you've authenticated dropbox via the web. Press enter to continue"
 sudo cp $HOMECONFIG/dropbox@.service /etc/systemd/system
 sudo systemctl daemon-reload
