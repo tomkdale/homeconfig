@@ -139,7 +139,6 @@ alias ogcro="oc get cronjobs"
 alias ogsub="oc get subscriptions"
 alias ogall="oc get all"
 alias ogver="oc version"
-alias ogurl="oc get -n openshift-console route console"
 alias ogco="oc get co"
 alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
@@ -154,6 +153,10 @@ alias szshrc="source ~/.zshrc"
 
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
 
+ogurl()
+{
+  oc get -n openshift-console route console | tail -n 1 | awk '{print $2}'
+}
 homeconfigpush()
 {
   pushd
