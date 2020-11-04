@@ -7,62 +7,62 @@ set -ex
 
 if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
   if grep ID /etc/os-release |grep -qE "fedora"; then
-    
-  elif
+    echo "Using fedora/silverblue"
+  else
+    echo "Using RHEL/CENTOS need epel packages"
     yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
   fi
 	sudo dnf install \
-	  ansible \
-	    golang \
-		git \
-		gcc \
-		make \
-		perl \
-		python3 \
-		unzip \
-		wget \
-		xclip \
-		vim \
-		curl \
-		tree \
-		ShellCheck \
-		jq \
-		w3m \
-		tmux \
-		zip \
-    moreutils
-    neovim
-    python3-neovim
+	ansible \
+	golang \
+	git \
+	gcc \
+	make \
+	perl \
+	python3 \
+	unzip \
+	wget \
+	xclip \
+	vim \
+	curl \
+	tree \
+	ShellCheck \
+	jq \
+	w3m \
+	tmux \
+	zip \
+  moreutils \
+  neovim \ 
+  python3-neovim 
 	sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
   sudo dnf install gh
 
-elif grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
+elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	DEBIAN_FRONTEND=noninteractive
 	DEBCONF_NONINTERACTIVE_SEEN=true
 	export DEBIAN_FRONTEND DEBCONF_NONINTERACTIVE_SEEN
 	sudo apt-get update
 	sudo apt-get -yq install \
-		ansible \
-		build-essential \
-   	golang \
-		gcc \
-		net-utils \
-		git \
-		python3 \
-		python3-pip \
-		unzip \
-		wget \
-		xclip \
-		vim \
-		shellcheck \
-		curl \
-		tree \
-		jq \
-		w3m \
-		tmux \
-		zip \
-    moreutils \
-    neovim
+	ansible \
+	build-essential \
+  golang \
+	gcc \
+	git \
+	python3 \
+	python3-pip \
+	unzip \
+	wget \
+	xclip \
+	vim \
+	shellcheck \
+	curl \
+	tree \
+	jq \
+	w3m \
+	tmux \
+	zip \
+  moreutils \
+  neovim
 
 	
 
