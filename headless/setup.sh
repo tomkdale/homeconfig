@@ -6,7 +6,4 @@ if [ $# -ne 2 ]; then
 fi
 
 scp .??* $1@$2:~/ 
-
-ssh $1@$2
-git clone git@github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugin/start/
-
+ssh $1@$2 " cd $HOME ; git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/pack/plugin/start/"

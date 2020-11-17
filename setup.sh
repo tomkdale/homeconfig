@@ -63,8 +63,16 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # install vimplug
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +Pluginstall +qall
+
+vim +PlugInstall +qall
 vim +PlugUpdate +qall
+
+if -v nvim; then
+  mkdir ~/.config/nvim
+  ln -s ~/.vimrc ~/.config/nvim/init.vim
+  nvim +PlugInstall +qall
+  nvim +PlugUpdate +qall
+fi
 
 #########################################
 # tmux things
