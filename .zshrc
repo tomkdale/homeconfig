@@ -145,7 +145,9 @@ alias ogpa="oc get packagemanifests"
 
 #More Aliases
 alias todo="todo.sh -d ~/.todo "
-alias dodo="todo.sh -d ~/.todo list | grep work"
+alias todow="todo.sh -d ~/.todo list | grep work"
+alias todoo="todo.sh -d ~/.todo list | grep ossm"
+alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal"'
 alias oc="oc "
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
