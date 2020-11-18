@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo sed -i '1s/^/nameserver 9.114.114.121 \n/' /etc/resolv.conf
