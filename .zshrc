@@ -186,6 +186,7 @@ oglogin()
   oc login --server=9.12.23."$1":6443
 }
 
+ogdebug() { kubectl run -i --rm --tty debug --image=fedora:33 --restart=Never -- sh }
 cddir ()
 {
     mkdir -p -- "$1" &&
