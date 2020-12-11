@@ -132,7 +132,6 @@ alias ogser="oc get services"
 alias ogrou="oc get routes"
 alias ogjob="oc get jobs"
 alias ogdep="oc get deployments"
-alias ogcon="oc config view | grep current-context"	
 alias ogpro="oc get project"
 alias ogsec="oc get secrets"
 alias ogcro="oc get cronjobs"
@@ -154,6 +153,12 @@ alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
 
 #alias todols="todo ls | awk '{print $NF,$0}' | sort | cut -f2- -d' ' | grep -v \"TODO: \" "
+
+ogcon()
+{
+  echo "KUBECONFIG=$KUBECONFIG"
+  oc config view | grep "current-context"
+}
 
 ogurl()
 {
@@ -186,7 +191,8 @@ oglogin()
   oc login --server=9.12.23."$1":6443
 }
 
-ogdebug() { kubectl run -i --rm --tty debug --image=fedora:33 --restart=Never -- sh }
+ogdebug() { kubectl run -i --rm --tty debug --image=praqma/network-multitool --restart=Never -- sh }
+
 cddir ()
 {
     mkdir -p -- "$1" &&
@@ -199,4 +205,16 @@ vd ()
   ls 
 }
 
+
+giturl ()
+{
+  gitremote=$(git remote -v | grep 'fetch' | awk '{print $2}')
+  if echo $gitremote | grep 'git@github' > /dev/null ; then
+    echo $gitremote | sed  's|git@|https://|g' | sed 's|com:|com/|g'
+  elif echo $gitremote | grep 'https://github' > /dev/null ; then
+    echo $gitremote
+  else 
+    echo 'unexpected git remote'
+  fi
+}
 

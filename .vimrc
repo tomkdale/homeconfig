@@ -1,4 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""
+"Surround.vim 
+"https://vimawesome.com/plugin/surround-vim""""""""""""""""""""""""""""""""""""""
 " Tom's vimrc
 "
 """"""""""""""""""""""""""""""""""""""
@@ -55,6 +56,10 @@ let NERDTreeShowHidden=1
 " Sensible vimrc things that 'should be in any vimrc'
 " https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+
+"Surround.vim 
+"https://vimawesome.com/plugin/surround-vim
+Plug 'tpope/vim-surround'
 
 " Vim-powerline
 Plug 'powerline/powerline'
