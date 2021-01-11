@@ -78,6 +78,10 @@ source $ZSH/oh-my-zsh.sh
 ##########################################
 #My config
 
+export KUBE_PS1_BINARY=oc
+source $HOME/productivity/kube-ps1/kube-ps1.sh
+PROMPT='$(kube_ps1)'$PROMPT
+
 #make 777 file color less ugly with ls
 LS_COLORS="$LS_COLORS:ow=103;30;01"
 
@@ -124,6 +128,7 @@ alias bush="tree -L 2"
 alias beep1="aplay -q /usr/share/sounds/speech-dispatcher/guitar-12.wav"
 alias beep2="aplay -q /usr/share/sounds/speech-dispatcher/guitar-13.wav"
 alias beep="beep1"
+alias findr="find -name"
 # Openshift quick help
 alias ogres="oc describe nodes | grep Resource -A 5"
 alias ogpod="oc get pods"
@@ -141,6 +146,8 @@ alias ogver="oc version"
 alias ogco="oc get co"
 alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
+alias ogbadpod="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
+alias ogbadpods="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
 
 #More Aliases
 alias todo="todo.sh -d ~/.todo "
@@ -192,6 +199,9 @@ oglogin()
 }
 
 ogdebug() { kubectl run -i --rm --tty debug --image=praqma/network-multitool --restart=Never -- sh }
+
+ognetwork() { oc get network.config/cluster -o jsonpath='{.status.networkType}{"\n"}' }
+
 
 cddir ()
 {
