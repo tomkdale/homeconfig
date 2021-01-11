@@ -62,7 +62,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
 " Vim-powerline
-Plug 'powerline/powerline'
+"Plug 'powerline/powerline'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'

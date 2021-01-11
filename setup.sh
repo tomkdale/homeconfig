@@ -3,10 +3,7 @@
 # One stop shop to get my entire environment set up on any dirstro (the goal)
 # Tom Dale
 #
-#
 #########################################
-
-
 PRODUCTIVITY=$HOME/productivity
 HOMECONFIG=$PRODUCTIVITY/homeconfig
 cd $HOMECONFIG || exit
@@ -34,20 +31,13 @@ for file in $( ls -apd .?* |  grep -v / |  grep -v .sw ) ; do
   ln -sfv "$HOMECONFIG/$file" "$HOME/$file"
 done
 
-
 #########################################
 # Git things
 #########################################
-
 echo 'Set up git credentials if not already done'
 if ./scripts/git-add-key.sh ; then
 				git remote set-url origin git@github.com:tomkdale/homeconfig.git
 fi
-
-#########################################
-# Powerline things
-#########################################
-sudo pip3 install powerline-status
 
 #########################################
 # zsh things	
@@ -55,7 +45,6 @@ sudo pip3 install powerline-status
 #install oh-my-zsh
 cd $HOME  || exit
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 #########################################
 # vim things
@@ -86,7 +75,6 @@ git clone https://github.com/jonmosco/kube-tmux.git
 #########################################
 #Configure keyboard changes
 #########################################
-
 #if Gnome
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
 				#Gnome Setting Changes
@@ -114,6 +102,4 @@ chmod +x $HOME/.local/bin/baker
 #########################################
 ## Other installation steps
 #########################################
-
 echo "Now proceed with any applicable *-setup.sh scripts"
-
