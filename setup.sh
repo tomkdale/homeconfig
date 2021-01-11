@@ -97,6 +97,12 @@ git clone https://github.com/rupa/z.git
 curl -fLo $HOME/.local/bin/baker https://raw.github.com/tomkdale/Baker/master/baker 
 chmod +x $HOME/.local/bin/baker
 
+#########################################
+# Setup neovim if present
+#########################################
+if [ -e nvim ] ; then
+  cp $HOMECONFIG/neovim/init.vim $HOME/.config/nvim/init.vim
+fi
 
 
 #########################################
