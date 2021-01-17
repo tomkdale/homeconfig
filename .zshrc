@@ -104,6 +104,7 @@ alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
 alias ogbadpod="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
 alias ogbadpods="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
+alias od="oc "
 #More Aliases
 alias todo="todo.sh -d ~/.todo "
 alias todow="todo.sh -d ~/.todo list | grep work"
