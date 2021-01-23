@@ -44,7 +44,6 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	sudo apt-get update
 	sudo apt-get -yq install \
 	ansible \
-	build-essential \
   golang \
 	gcc \
 	git \
