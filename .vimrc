@@ -1,5 +1,3 @@
-"Surround.vim 
-"https://vimawesome.com/plugin/surround-vim""""""""""""""""""""""""""""""""""""""
 " Tom's vimrc
 "
 """"""""""""""""""""""""""""""""""""""
@@ -27,6 +25,12 @@ Plug 'w0rp/ale'
 "https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'	
 
+" vim-go 
+" https://github.com/fatih/vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
+
 " Github dashboard, look through github events in vim
 " https://github.com/junegunn/vim-github-dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -43,7 +47,8 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Indent Guide
 Plug 'thaerkh/vim-indentguides'
-
+let g:indentguides_ignorelist = ['text','markdown']
+          
 
 " Nerdtree and nerdtree git
 Plug 'preservim/nerdtree' | Plug 'scrooloose/nerdtree' 
@@ -59,7 +64,7 @@ Plug 'tpope/vim-sensible'
 
 "Surround.vim 
 "https://vimawesome.com/plugin/surround-vim
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 
 " Vim-powerline
 "Plug 'powerline/powerline'
@@ -84,8 +89,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Save with sudo
-command! W w !sudo tee % > /dev/null
-
+command W :echo 'Did you mean :w !sudo tee %'
 
 set number
 set smartcase
@@ -106,13 +110,24 @@ set ic ai ts=2
 set splitbelow
 set splitright
 set modifiable
+
 "set leader
 let mapleader = ","
 let maplocalleader = '\\'
+
 nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ev :tabe ~/.vimrc<cr>
+" Lookup vim help on selected word
 nnoremap <K> <C-Y>
-nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-noremap <leader>n :set number!<cr>
+        
+" Copy-freindly
+ noremap <leader>n :set number! <bar> :IndentGuidesToggle<cr>
+
+" pane/window navigation
+nnoremap <leader>% :vnew <cr>
+nnoremap <leader>' :new <cr>
+nnoremap <leader>t :tab split<cr>
+nnoremap <leader>q :close<cr>
 
 "abbreviations to fix typos
 "seperate abbreviation file to vim bash and zsh
@@ -137,5 +152,4 @@ inoremap <leader>#th ################################<esc>o# Thursday <esc>o####
 inoremap <leader>#f ################################<esc>o# Friday <esc>o#######################################
 
 nnoremap <space> i<space>
-noremap <leader>, i<enter><esc>
 
