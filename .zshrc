@@ -61,6 +61,10 @@ export HISTCONTROL=erasedups:ignorespace
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #Aliases
+alias o="oc "
+alias g="git "
+alias p="podman "
+alias v="vim "
 alias vi="vim"
 if command -v nvim > /dev/null ; then
   alias vi="nvim"
@@ -104,13 +108,16 @@ alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
 alias ogbadpod="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
 alias ogbadpods="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
-alias od="oc "
+alias ognodeips="oc get nodes  -o jsonpath='{.items[*].status.addresses[?(@.type==\"InternalIP\")].address}'"
+alias ogimages="oc get pods -o jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort | uniq -c"
+alias ogimage="oc get pods -o jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort | uniq -c"
+
 #More Aliases
+
 alias todo="todo.sh -d ~/.todo "
 alias todow="todo.sh -d ~/.todo list | grep work"
 alias todoo="todo.sh -d ~/.todo list | grep ossm"
 alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal"'
-alias oc="oc "
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
