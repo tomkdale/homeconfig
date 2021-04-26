@@ -51,6 +51,8 @@ export KUBE_PS1_BINARY=oc
 source $HOME/productivity/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
 
+#npm
+export PATH=~/.npm-global/bin:$PATH
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
@@ -111,13 +113,19 @@ alias ogbadpods="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
 alias ognodeips="oc get nodes  -o jsonpath='{.items[*].status.addresses[?(@.type==\"InternalIP\")].address}'"
 alias ogimages="oc get pods -o jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort | uniq -c"
 alias ogimage="oc get pods -o jsonpath="{..image}" | tr -s '[[:space:]]' '\n' | sort | uniq -c"
+alias oglabel="oc get clusterversion version --show-labels"
+alias oglabels="oc get clusterversion version --show-labels"
+alias ogetcd="oc get --raw=/healthz/etcd"
+alias gitjd="git checkout jenkins-devtest"
+alias gitj="git checkout jenkins"
+alias gitm= "git checkout master"
 
 #More Aliases
 
 alias todo="todo.sh -d ~/.todo "
+alias todoa="todo.sh -d ~/.todo list "
 alias todow="todo.sh -d ~/.todo list | grep work"
-alias todoo="todo.sh -d ~/.todo list | grep ossm"
-alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal"'
+alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal|prod"'
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
@@ -160,6 +168,10 @@ ogdebug() { kubectl run -i --rm --tty debug --image=praqma/network-multitool --r
 
 ognetwork() { oc get network.config/cluster -o jsonpath='{.status.networkType}{"\n"}' }
 
+ogbadco()
+{
+  oc get co | grep -v "True        False         False"
+}
 
 cddir ()
 {

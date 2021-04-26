@@ -1,6 +1,7 @@
 [alias]
 	launch = !git add . && git commit -m. && git push
 	source = config --get remote.origin.url
+	co = checkout
 
 [user]
 	email = tom.k.dale@gmail.com

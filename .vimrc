@@ -29,6 +29,11 @@ Plug 'christoomey/vim-tmux-navigator'
 " https://github.com/fatih/vim-go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" vim-prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x'
+  \ }
 
 
 " Github dashboard, look through github events in vim
@@ -78,6 +83,7 @@ Plug 'vimwiki/vimwiki'
     let g:vimwiki_list = [wiki_1]
     let g:vimwiki_ext = '.md' " set extension to .md
     let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+    let g:vimwiki_autowriteall = 1
 " needed for vimwiki
 set nocompatible
 filetype plugin on
@@ -87,9 +93,6 @@ syntax on
 call plug#end()
 "End plugin code
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Save with sudo
-command W :echo 'Did you mean :w !sudo tee %'
 
 set number
 set smartcase
