@@ -261,14 +261,6 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
-[org/gnome/pomodoro/state]
-timer-date='2019-11-20T18:52:34Z'
-timer-elapsed=1.000805139541626
-timer-paused=true
-timer-score=0.0
-timer-state='pomodoro'
-timer-state-date='2019-11-20T18:52:32Z'
-timer-state-duration=1500.0
 
 [org/gnome/settings-daemon/peripherals/keyboard]
 numlock-state='on'

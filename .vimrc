@@ -71,8 +71,6 @@ Plug 'tpope/vim-sensible'
 "https://vimawesome.com/plugin/surround-vim
 "Plug 'tpope/vim-surround'
 
-" Vim-powerline
-"Plug 'powerline/powerline'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'

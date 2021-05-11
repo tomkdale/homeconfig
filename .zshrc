@@ -62,22 +62,21 @@ export HISTCONTROL=erasedups:ignorespace
 #fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# pushpopt
+export PUSHPOPT=~/.pushpopt.txt
+
 #Aliases
 alias o="oc "
 alias g="git "
 alias p="podman "
 alias v="vim "
 alias vi="vim"
-if command -v nvim > /dev/null ; then
-  alias vi="nvim"
-  alias vim="nvim"
-fi
 alias zshconfig="vim ~/.zshrc"
 set -o vi
 alias info="info --vi-keys"
 alias la="ls -alh"
 alias open="xdg-open"
-alias xclip="xclip -se c"
+alias xclip="xclip"
 alias lh="ls -hl"
 alias whaoami="whoami"
 alias whaomi="whoami"
