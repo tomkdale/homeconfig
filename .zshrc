@@ -104,7 +104,6 @@ alias ogcro="oc get cronjobs"
 alias ogsub="oc get subscriptions"
 alias ogall="oc get all"
 alias ogver="oc version"
-alias ogco="oc get co"
 alias ogex="oc extract secret/pull-secret -n openshift-config  --confirm"
 alias ogpa="oc get packagemanifests"
 alias ogbadpod="oc get pods -A -o wide | grep -vE '(Running|Completed)'"
@@ -134,6 +133,10 @@ ogcon()
   echo "KUBECONFIG=$KUBECONFIG"
   oc config view | grep "current-context"
 }
+ogco() 
+{
+   oc get co -o go-template='{{- range .items -}}{{- $available := "Unknown" -}}{{- $message := "" -}}{{- range .status.conditions -}}{{- if eq .type "Available" -}}{{- $available = .status -}}{{- $message = .message -}}{{- end -}}{{- end -}}{{- if or (eq $available "False") (eq $available "Unknown") -}}{{- print "===== " .metadata.name " =====\n" $message "\n" -}}{{- end -}}{{- end -}}'
+ }
 ogurl()
 {
   oc get -n openshift-console route console | tail -n 1 | awk '{print $2}'
