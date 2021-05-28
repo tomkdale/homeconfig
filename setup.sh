@@ -30,7 +30,7 @@ for file in $( ls -apd .?* |  grep -v / |  grep -v .sw ) ; do
   mv "$HOME/$file" "$HOME/.dotfilebackups" 2> /dev/null
   ln -sfv "$HOMECONFIG/$file" "$HOME/$file"
 done
-ln -sfv "$HOMECONFIG/i3/config $HOME/.config/i3/config"
+ln -sfv "$HOMECONFIG/i3/config" "$HOME/.config/i3/config"
 if ps -e | grep -E -i "i3" ; then 
   echo "if using i3 run meta+shift+R to reload new i3config"
 fi

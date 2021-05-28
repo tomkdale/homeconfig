@@ -31,11 +31,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	w3m \
 	tmux \
 	zip \
-  moreutils \
-  neovim \ 
-  python3-neovim 
-	sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-  sudo dnf install gh
+  zsh
 
 elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	DEBIAN_FRONTEND=noninteractive
@@ -51,6 +47,7 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	python3-pip \
 	unzip \
 	wget \
+  zsh \
 	xclip \
 	vim \
 	shellcheck \
@@ -60,6 +57,7 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	w3m \
 	tmux \
 	zip \
+  zsh \
   moreutils \
   neovim
 
@@ -83,6 +81,7 @@ elif grep ID /etc/os-release | grep -q 'arch\|manjaro'; then
 	sudo pacman -S shellcheck --noconfirm
 	sudo pacman -S jq --noconfirm
 	sudo pacman -S w3m --noconfirm
+	sudo pacman -S zsh --noconfirm
 	sudo pacman -S tmux --noconfirm
 	sudo pacman -S zip  --noconfirm
 	sudo pacman -S github-cli --noconfirm
