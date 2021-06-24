@@ -18,10 +18,6 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 export ZSH="$HOME/.oh-my-zsh"
 
-# Add Reverse i search functionality
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
 #Shell THEMES
 ZSH_THEME=candy
 
@@ -54,7 +50,7 @@ PROMPT='$(kube_ps1)'$PROMPT
 #npm
 export PATH=~/.npm-global/bin:$PATH
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='gvim -v'
 
 # don't put space started commands in history
 export HISTCONTROL=erasedups:ignorespace
@@ -65,18 +61,29 @@ export HISTCONTROL=erasedups:ignorespace
 # pushpopt
 export PUSHPOPT=~/.pushpopt.txt
 
+# Add Reverse i search functionality
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+
+# mcfly
+# Mapped to use ^E for mcfly backsearch
+export MCFLY_FUZZY=true
+export MCFLY_KEY_SCHEME=vim
+eval "$(mcfly init zsh)"
+
 #Aliases
 alias o="oc "
 alias g="git "
 alias p="podman "
-alias v="vim "
-alias vi="vim"
+alias v="gvim -v "
+alias vi="gvim -v"
 alias zshconfig="vim ~/.zshrc"
 set -o vi
 alias info="info --vi-keys"
 alias la="ls -alh"
 alias open="xdg-open"
-alias xclip="xclip"
+alias xclip="xclip -selection clipboard"
 alias lh="ls -hl"
 alias whaoami="whoami"
 alias whaomi="whoami"
@@ -127,6 +134,7 @@ alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal|prod"'
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
+
 #Alias functions
 ogcon()
 {
@@ -163,7 +171,7 @@ ogset()
 }
 oglogin() 
 {
-  oc login --server=9.12.23."$1":6443
+  oc login --server=9.12.23."$1":6443 -u tdale
 }
 
 ogdebug() { kubectl run -i --rm --tty debug --image=praqma/network-multitool --restart=Never -- sh }
