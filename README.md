@@ -3,8 +3,7 @@ Tom's linux 1 stop environment setup, run `./setup.sh` to setup desktop environm
 
 ## Standard Setup
 1. `mkdir ~/productivity && git clone https://github.com/tomkdale/homeconfig.git ~/productivity/homeconfig`
-2. ` ~/productivity/homedir/setup.sh ` not this will ask for your sudo password for somethings. Be careful
-Done!
+2. ` ~/productivity/homedir/setup.sh ` 
 
 
 ## Further Setup

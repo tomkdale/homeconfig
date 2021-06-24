@@ -43,9 +43,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/productivity/z/z.sh
 
 # Show k8s status in term
-export KUBE_PS1_BINARY=oc
-source $HOME/productivity/kube-ps1/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT
+#export KUBE_PS1_BINARY=oc
+#source $HOME/productivity/kube-ps1/kube-ps1.sh
+#PROMPT='$(kube_ps1)'$PROMPT
 
 #npm
 export PATH=~/.npm-global/bin:$PATH
