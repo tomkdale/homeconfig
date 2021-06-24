@@ -50,7 +50,13 @@ source ~/productivity/z/z.sh
 #npm
 export PATH=~/.npm-global/bin:$PATH
 # Preferred editor for local and remote sessions
-export EDITOR='gvim -v'
+if which gvim > /dev/null ; then
+  export EDITOR='gvim -v'
+elif which vim > /dev/null ; then
+  export EDITOR="vim"
+else 
+  export EDITOR="vi"
+fi
 
 # don't put space started commands in history
 export HISTCONTROL=erasedups:ignorespace
@@ -67,17 +73,18 @@ bindkey '^R' history-incremental-search-backward
 
 
 # mcfly
-# Mapped to use ^E for mcfly backsearch
-export MCFLY_FUZZY=true
-export MCFLY_KEY_SCHEME=vim
-eval "$(mcfly init zsh)"
-
+if which mcfly > /dev/null; then
+  # Mapped to use ^E for mcfly backsearch
+  export MCFLY_FUZZY=true
+  export MCFLY_KEY_SCHEME=vim
+  eval "$(mcfly init zsh)"
+fi
 #Aliases
 alias o="oc "
 alias g="git "
 alias p="podman "
-alias v="gvim -v "
-alias vi="gvim -v"
+alias v="vim -v "
+alias vi="vim -v"
 alias zshconfig="vim ~/.zshrc"
 set -o vi
 alias info="info --vi-keys"
@@ -174,9 +181,15 @@ oglogin()
   oc login --server=9.12.23."$1":6443 -u tdale
 }
 
-ogdebug() { kubectl run -i --rm --tty debug --image=praqma/network-multitool --restart=Never -- sh }
+ogdebug()
+{
+  kubectl run -i --rm --tty debug --image=praqma/network-multitool --restart=Never -- sh 
+}
 
-ognetwork() { oc get network.config/cluster -o jsonpath='{.status.networkType}{"\n"}' }
+ognetwork() 
+{
+  oc get network.config/cluster -o jsonpath='{.status.networkType}{"\n"}'
+}
 
 ogbadco()
 {
@@ -187,12 +200,6 @@ cddir ()
 {
     mkdir -p -- "$1" &&
       cd -P -- "$1"
-}
-
-vd () 
-{
-  cd "$1"
-  ls 
 }
 
 giturl ()
@@ -206,4 +213,3 @@ giturl ()
     echo 'unexpected git remote'
   fi
 }
-
