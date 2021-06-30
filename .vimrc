@@ -25,10 +25,6 @@ Plug 'w0rp/ale'
 "https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'	
 
-" vim-go 
-" https://github.com/fatih/vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " vim-prettier
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -71,7 +67,6 @@ Plug 'tpope/vim-sensible'
 "https://vimawesome.com/plugin/surround-vim
 "Plug 'tpope/vim-surround'
 
-
 " Vimwiki
 Plug 'vimwiki/vimwiki'
 
@@ -87,6 +82,18 @@ set nocompatible
 filetype plugin on
 syntax on
 
+"""""""""""""""""""""""""""""""""""""
+" Language specific  Plugins
+""" golang plugins
+" vim-go 
+" https://github.com/fatih/vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+""" python plugins
+"https://realpython.com/vim-and-python-a-match-made-in-heaven/#vim-extensions
+" Jedi, python autocomplete and more
+Plug 'davidhalter/jedi-vim'
+Plug 'tmhedberg/SimpylFold'
+
 " Initialize plugin system
 call plug#end()
 "End plugin code
@@ -95,6 +102,11 @@ call plug#end()
 set number
 set smartcase
 set mouse=a
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 "tabs
 filetype plugin indent on
@@ -151,6 +163,4 @@ inoremap <leader>#t ################################<esc>o# Tuesday <esc>o######
 inoremap <leader>#w ################################<esc>o# Wednesday <esc>o######################################
 inoremap <leader>#th ################################<esc>o# Thursday <esc>o#######################################
 inoremap <leader>#f ################################<esc>o# Friday <esc>o#######################################
-
-nnoremap <space> i<space>
 
