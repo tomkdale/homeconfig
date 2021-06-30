@@ -136,12 +136,22 @@ nnoremap <K> <C-Y>
 " Copy-freindly
  noremap <leader>n :set number! <bar> :IndentGuidesToggle<cr>
 
+" Language filetype specific changes are set in ~/.vim/ftplugin/*.vim
+" https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean
+filetype plugin on
+filetype plugin indent on
+
+"""""""""""""""""""""""""""""""""""""""""
+" Code navigation
 " pane/window navigation
 nnoremap <leader>% :vnew <cr>
 nnoremap <leader>' :new <cr>
 nnoremap <leader>t :tab split<cr>
 nnoremap <leader>q :close<cr>
 
+
+"""""""""""""""""""""""""""""""""""""""""
+" Simple typing fixes and shortcuts
 "abbreviations to fix typos
 "seperate abbreviation file to vim bash and zsh
 iabbrev waht what
@@ -153,6 +163,8 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>W :set wrap!
 nnoremap <leader># i#########################################<esc>
 inoremap <leader># #########################################
+nnoremap <leader>" i"""""""""""""""""""""""""""""""""""""""""<esc>
+inoremap <leader>" """""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>#m i################################<esc>o# Monday <esc>o#######################################
 nnoremap <leader>#t i################################<esc>o# Tuesday <esc>o#######################################
 nnoremap <leader>#w i################################<esc>o# Wednesday <esc>o######################################

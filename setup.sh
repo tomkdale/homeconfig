@@ -51,15 +51,6 @@ cd $HOME  || exit
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #########################################
-# vim things
-#########################################
-# install vimplug
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-vim +PlugInstall +qall
-vim +PlugUpdate +qall
-#########################################
 # tmux things
 ##########################################
 mkdir $HOME/.tmux
