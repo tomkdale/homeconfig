@@ -19,6 +19,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Check syntax in Vim 
 " https://vimawesome.com/plugin/ale
+" choosing to use ale over syntastic
 Plug 'w0rp/ale'
 
 " Vim-tmux navigator
@@ -35,6 +36,11 @@ Plug 'prettier/vim-prettier', {
 " Github dashboard, look through github events in vim
 " https://github.com/junegunn/vim-github-dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" youcompleteme
+Plug 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "" autofilling snippets in vim
 "" https://github.com/SirVer/ultisnips
@@ -90,8 +96,6 @@ syntax on
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 """ python plugins
 "https://realpython.com/vim-and-python-a-match-made-in-heaven/#vim-extensions
-" Jedi, python autocomplete and more
-Plug 'davidhalter/jedi-vim'
 Plug 'tmhedberg/SimpylFold'
 
 " Initialize plugin system
