@@ -15,6 +15,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	sudo dnf install \
 	ansible \
 	golang \
+  tldr \
 	git \
 	gcc \
 	make \
@@ -45,6 +46,7 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	gcc \
 	git \
 	python3 \
+  tldr \
 	python3-pip \
 	unzip \
 	wget \

@@ -80,6 +80,7 @@ if which mcfly > /dev/null; then
   eval "$(mcfly init zsh)"
 fi
 #Aliases
+alias python="python3 "
 alias o="oc "
 alias g="git "
 alias p="podman "
