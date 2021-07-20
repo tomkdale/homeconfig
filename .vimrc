@@ -22,6 +22,11 @@ Plug 'junegunn/vim-easy-align'
 " choosing to use ale over syntastic
 Plug 'w0rp/ale'
 
+set nocompatible
+call plug#begin()
+Plug 'sheerun/vim-polyglot'
+call plug#end()
+
 " Vim-tmux navigator
 "https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'	
@@ -38,7 +43,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " youcompleteme
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -114,14 +119,14 @@ nnoremap <space> za
 
 "tabs
 filetype plugin indent on
-" On pressing tab, insert 2 spaces
+" On pressing tab, insert 4 spaces
 set expandtab
-" show existing tab with 2 spaces width
-set tabstop=2
-set softtabstop=2
-" when indenting with '>', use 2 spaces width
-set shiftwidth=2
-set ic ai ts=2 
+" show existing tab with 4 spaces width
+set tabstop=4
+set softtabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+set ic ai ts=4 
 
 "split screen setting
 set splitbelow
@@ -145,6 +150,11 @@ nnoremap <K> <C-Y>
 filetype plugin on
 filetype plugin indent on
 
+
+" theme
+"
+syntax enable
+colorscheme monokai
 """""""""""""""""""""""""""""""""""""""""
 " Code navigation
 " pane/window navigation
