@@ -24,6 +24,7 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	unzip \
 	wget \
 	xclip \
+    yarn \
 	vim \
   vim-X11 \
 	curl \
@@ -43,6 +44,7 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	sudo apt-get -yq install \
 	ansible \
   golang \
+    yarn \
 	gcc \
 	git \
 	python3 \
