@@ -133,6 +133,7 @@ alias ogetcd="oc get --raw=/healthz/etcd"
 alias gitjd="git checkout jenkins-devtest"
 alias gitj="git checkout jenkins"
 alias gitm= "git checkout master"
+alias ogworkloads="oc get projects | grep -v openshift | grep -v kube"
 
 #More Aliases
 
@@ -143,8 +144,16 @@ alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal|prod"'
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
+alias ogconsole='xdg-open "http://$(ogurl)"'
+alias ogtd="oc login -u tdale -p helloavacado" # Throwaway passwrd
+
 
 #Alias functions
+ognfs()
+{
+    oc get pods -n openshift-nfs-storage -o yaml | grep "server:"
+}
+
 ogcon()
 {
   echo "KUBECONFIG=$KUBECONFIG"
