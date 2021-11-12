@@ -24,7 +24,6 @@ if grep ID /etc/os-release | grep -qE "fedora|rhel|centos|silverblue"; then
 	unzip \
 	wget \
 	xclip \
-    yarn \
 	vim \
   vim-X11 \
 	curl \
