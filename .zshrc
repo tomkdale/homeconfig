@@ -28,7 +28,6 @@ zstyle ':completion:*' menu select
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 
-
 # enable command auto-correction.
  ENABLE_CORRECTION="true"
 
@@ -36,7 +35,7 @@ complete -o nospace -C /usr/local/bin/odo odo
  COMPLETION_WAITING_DOTS="true"
 
 #zsh plugins
-plugins=(git history docker sudo oc kubectl dnf pip )
+plugins=(git helm history sudo oc kubectl dnf pip )
 source $ZSH/oh-my-zsh.sh
 
 # z jump around
@@ -146,7 +145,7 @@ alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
 alias ogconsole='xdg-open "http://$(ogurl)"'
 alias ogtd="oc login -u tdale -p helloavacado" # Throwaway passwrd
-
+alias ogipsec="oc get pods -n openshift-ovn-kubernetes | grep ipsec"
 
 #Alias functions
 ognfs()
@@ -224,3 +223,6 @@ giturl ()
     echo 'unexpected git remote'
   fi
 }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
