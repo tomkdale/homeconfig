@@ -71,13 +71,6 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 
-# mcfly
-if which mcfly > /dev/null; then
-  # Mapped to use ^E for mcfly backsearch
-  export MCFLY_FUZZY=true
-  export MCFLY_KEY_SCHEME=vim
-  eval "$(mcfly init zsh)"
-fi
 #Aliases
 alias python="python3 "
 alias o="oc "
