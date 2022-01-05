@@ -139,6 +139,9 @@ alias szshrc="source ~/.zshrc"
 alias ogconsole='xdg-open "http://$(ogurl)"'
 alias ogtd="oc login -u tdale -p helloavacado" # Throwaway passwrd
 alias ogipsec="oc get pods -n openshift-ovn-kubernetes | grep ipsec"
+alias ogpodcpu="oc adm top pods -A | sort -k 3 -g -r | head -n 20"
+alias ogpodmem="oc adm top pods -A | sort -k 4 -g -r | head -n 20"
+
 
 #Alias functions
 ognfs()
@@ -219,3 +222,19 @@ giturl ()
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tdale/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tdale/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tdale/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tdale/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
