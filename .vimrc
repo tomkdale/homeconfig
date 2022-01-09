@@ -157,7 +157,6 @@ filetype plugin indent on
 " theme
 "
 syntax enable
-colorscheme monokai
 """""""""""""""""""""""""""""""""""""""""
 " Code navigation
 " pane/window navigation

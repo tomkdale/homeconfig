@@ -43,6 +43,7 @@ elif  grep ID /etc/os-release | grep -qE 'debian|ubuntu|raspbian'; then
 	sudo apt-get -yq install \
 	ansible \
   golang \
+    yarn \
 	gcc \
 	git \
 	python3 \

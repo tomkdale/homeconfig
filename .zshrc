@@ -28,7 +28,6 @@ zstyle ':completion:*' menu select
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/odo odo
 
-
 # enable command auto-correction.
  ENABLE_CORRECTION="true"
 
@@ -36,7 +35,7 @@ complete -o nospace -C /usr/local/bin/odo odo
  COMPLETION_WAITING_DOTS="true"
 
 #zsh plugins
-plugins=(git history docker sudo oc kubectl dnf pip )
+plugins=(git helm history sudo oc kubectl dnf pip )
 source $ZSH/oh-my-zsh.sh
 
 # z jump around
@@ -72,13 +71,6 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 
-# mcfly
-if which mcfly > /dev/null; then
-  # Mapped to use ^E for mcfly backsearch
-  export MCFLY_FUZZY=true
-  export MCFLY_KEY_SCHEME=vim
-  eval "$(mcfly init zsh)"
-fi
 #Aliases
 alias python="python3 "
 alias o="oc "
@@ -133,6 +125,7 @@ alias ogetcd="oc get --raw=/healthz/etcd"
 alias gitjd="git checkout jenkins-devtest"
 alias gitj="git checkout jenkins"
 alias gitm= "git checkout master"
+alias ogworkloads="oc get projects | grep -v openshift | grep -v kube"
 
 #More Aliases
 
@@ -143,8 +136,19 @@ alias todop='todo.sh -d ~/.todo list | grep -E "productivity|personal|prod"'
 alias versino="version"
 alias ezshrc="vi ~/.zshrc"
 alias szshrc="source ~/.zshrc"
+alias ogconsole='xdg-open "http://$(ogurl)"'
+alias ogtd="oc login -u tdale -p helloavacado" # Throwaway passwrd
+alias ogipsec="oc get pods -n openshift-ovn-kubernetes | grep ipsec"
+alias ogpodcpu="oc adm top pods -A | sort -k 3 -g -r | head -n 20"
+alias ogpodmem="oc adm top pods -A | sort -k 4 -g -r | head -n 20"
+
 
 #Alias functions
+ognfs()
+{
+    oc get pods -n openshift-nfs-storage -o yaml | grep "server:"
+}
+
 ogcon()
 {
   echo "KUBECONFIG=$KUBECONFIG"
@@ -215,3 +219,22 @@ giturl ()
     echo 'unexpected git remote'
   fi
 }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tdale/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tdale/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tdale/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tdale/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
