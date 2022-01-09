@@ -9,3 +9,6 @@
 	name = Tom
 [init]
 	defaultBranch = main
+
+[core]
+    excludesfile = ~/.gitignore
