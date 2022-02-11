@@ -141,7 +141,7 @@ alias ogtd="oc login -u tdale -p helloavacado" # Throwaway passwrd
 alias ogipsec="oc get pods -n openshift-ovn-kubernetes | grep ipsec"
 alias ogpodcpu="oc adm top pods -A | sort -k 3 -g -r | head -n 20"
 alias ogpodmem="oc adm top pods -A | sort -k 4 -g -r | head -n 20"
-
+alias oginfo="oc get clusterversion --show-labels=true"
 
 #Alias functions
 ognfs()
@@ -200,6 +200,11 @@ ognetwork()
 ogbadco()
 {
   oc get co | grep -v "True        False         False"
+}
+
+ogencrypted()
+{
+    oc get kubeapiserver -o=jsonpath='{range .items[0].status.conditions[?(@.type=="Encrypted")]}{.reason}{"\n"}{.message}{"\n"}'
 }
 
 cddir ()
