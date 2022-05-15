@@ -20,6 +20,12 @@ vim +PlugInstall +qall
 vim +PlugUpdate +qall
 
 #########################################
+# enable clipboard to work with wayland
+#########################################
+mkdir -p $VIMHOME/pack/
+cp $HOMECONFIG/vim/wayland_clipboard.vim $VIMHOME/pack/wayland_clipboard.vim
+
+#########################################
 # Add filetype vim specifics
 #https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean
 #########################################

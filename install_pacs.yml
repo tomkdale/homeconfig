@@ -1,0 +1,10 @@
+---
+- name: install_pacs
+  hosts: all
+  tasks:
+      - name: install_base
+        package:
+            name: tldr
+            state: present
+
+

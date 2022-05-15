@@ -85,8 +85,8 @@ Plug 'vimwiki/vimwiki'
     let wiki_2 = {}
     let wiki_1.path = '~/productivity/Notes/'
     let wiki_1.html_template = '~/productivity/Notes/template.tpl'
-    let wiki_2.path = '~/productivity/blog/'
-    let wiki_2.html_template = '~/productivity/blog/template.tpl'
+    let wiki_2.path = '~/productivity/personalNotes/'
+    let wiki_2.html_template = '~/productivity/personalNotes/template.tpl'
     let g:vimwiki_list = [wiki_1, wiki_2]
     let g:vimwiki_ext = '.md' " set extension to .md
     let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files

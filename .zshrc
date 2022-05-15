@@ -13,6 +13,7 @@ export GOPATH=$HOME/go
 GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GO111MODULE=on
 
 # PATH changes
 export PATH=$PATH:$HOME/.local/bin
